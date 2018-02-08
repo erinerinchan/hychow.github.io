@@ -1,230 +1,245 @@
-<style>
-h1 {
-	font-family: Futura;
-	font-size: 35px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	line-height: 26.4px;
-}
-h3 {
-	font-family: Futura;
-	font-size: 20px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 200;
-	line-height: 15.4px;
-}
-p {
-	font-family: sans-serif;
-	font-size: 10px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 200;
-	line-height: 20px;
-}
-li {
-	font-family: sans-serif;
-	font-size: 10px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 200;
-	line-height: 20px;
-}
-#wrapper {
-    margin-left:auto;
-    margin-right:auto;
-    width:1000px;
-}
-</style>
+<html>
 
 <head>
-<link rel="stylesheet" href="animate.css">
-<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link rel="stylesheet" href="animate.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <title>HY Chow</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-areas: grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-auto-rows: minmax(100px, auto);
+            grid-gap: 0.5em;
+            justify-items: stretch;
+            align-items: stretch;
+        }
+        
+        .title {
+            grid-column: 1/4;
+            grid-row: 1/3;
+            padding: 1em;
+            background-color: maroon;
+        }
+        
+        .info {
+            grid-column: 4/5;
+            grid-row: 1/3;
+            padding: 1em;
+            background-color: #9b9b9b;
+        }
+        
+        .education {
+            grid-column: 2/4;
+            grid-row: 3/5;
+            background-color: #dddddd;
+            padding: 1em;
+        }
+        
+        .honour {
+            grid-column: 1/2;
+            grid-row: 3/5;
+            background-color: #9b9b9b;
+            padding: 1em;
+        }
+        
+        .generalskill {
+            grid-column: 4/5;
+            grid-row: 3/5;
+            background-color: #9b9b9b;
+            padding: 1em;
+        }
+        
+        .portfolio {
+            grid-column: 1/2;
+            grid-row: 5/7;
+            background-color: #dddddd;
+            padding: 1em;
+        }
+        
+        .level {
+            grid-column: 2/5;
+            grid-row: 5/7;
+            background-color: #dddddd;
+            padding: 1em;
+        }
+        
+        .academic {
+            grid-column: 1/3;
+            grid-row: 7/9;
+            padding: 1em;
+            background-color: #dddddd;
+        }
+        
+        .working {
+            grid-column: 3/5;
+            grid-row: 7/9;
+            padding: 1em;
+            background-color: #dddddd;
+        }
+        
+        h1 {
+            font-family: Futura;
+            font-size: 32px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 500;
+            line-height: 26.4px;
+        }
+        
+        h3 {
+            font-family: Futura;
+            font-size: 20px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 200;
+            line-height: 15.4px;
+        }
+        
+        p {
+            font-family: sans-serif;
+            font-size: 10px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 200;
+            line-height: 20px;
+        }
+        
+        li {
+            font-family: sans-serif;
+            font-size: 10px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 200;
+            line-height: 20px;
+        }
+        
+        @media(max-width:700px) {
+            .container {
+                display: grid;
+                grid-template-areas: 'title' 'info' 'honour' 'education' 'generalskill' 'level' 'portfolio' 'academic' 'working';
+            }
+            .title {
+                grid-area: title;
+                font-style: h1;
+            }
+            .info {
+                grid-area: info;
+                background-color: #ddd;
+            }
+            .honour {
+                grid-area: info;
+                background-color: #9b9b9b;
+            }
+            .education {
+                grid-area: education;
+                background-color: #ddd;
+            }
+            .generalskill {
+                grid-area: generalskill;
+                background-color: #9b9b9b;
+            }
+            .level {
+                grid-area: level;
+                background-color: #ddd;
+            }
+            .portfolio {
+                grid-area: portfolio;
+                background-color: #9b9b9b;
+            }
+            .academic {
+                grid-area: academic;
+                background-color: #ddd;
+            }
+            .working {
+                grid-area: working;
+                background-color: #9b9b9b;
+            }
+        }
+    </style>
 </head>
 
-<div id="wrapper">
+<body>
+    <div class="container">
+        <div class="box title">
+            <h1 style="color:White"> CHOW HONG YUNG </h1>
+            <h3 style="color:White"> STUDENT JOURNALIST</h3>
+            <P style="color:white">Transforming the chaotic world into a harmony of words and visual</P>
+        </div>
+        <div class="box info">
+            <div style="color:white">
+                <p>
+                    <i class="fas fa-location-arrow"></i> LOCATION| Hong Kong</p>
+            </div>
+            <div style="color:white">
+                <p>
+                    <i class="fas fa-envelope-open"></i> EMAIL| 15216187@life.hkbu.edu.hk</p>
+            </div>
+            <div style="color:white">
+                <p>
+                    <i class="fas fa-book"></i> SCHOOL| Hong Kong Baptist University</p>
+            </div>
+            <div style="color:white">
+                <p>
+                    <i class="fas fa-lightbulb"></i> Major| International Journalism</p>
+            </div>
+            <div style="color:white">
+                <p>
+                    <i class="fas fa-at"></i> Personal Webpage| https://hongyungyo.wordpress.com/</p>
+            </div>
+        </div>
+        <div class="box education">
+            <div style="color:white">
+                <h3>
+                    <i class="fas fa-graduation-cap fa-sm"></i> EDUCATION</h3>
+            </div>
+            <p>|HONG KONG BAPTIST UNIVERSITY (2015 - 2019)</p>
+            <ul>
+                <li>BSocSc (Hons) Internaitonal Journalism</li>
+            </ul>
 
-<div style="background-color:Maroon;padding:0px;height:200px" class="animated bounce">
+            <p>|BOWLING GREEN STATE UNIVERISTY (2017 - 2018, Semester 1) </p>
+            <ul>
+                <li>Exchange Student</li>
+            </ul>
+        </div>
+        <div class="box honour">
+            <div style="color: #484848">
+                <h3>
+                    <i class="fas fa-trophy"></i> HONOURS</h3>
+            </div>
+            <p>|THE YOUNG REPORTER AWARD 2017</p>
+            <ul>
+                <li>Best Investigative Story 1st Place</li>
+                <li>Best Infographic 2nd Place</li>
+            </ul>
 
-<div style="float: Left; display: inline-block; padding: 20px">
-<img src="https://i.imgur.com/AxjXpi2.png" title="source: imgur.com" width="150" height="150" class="animated bounce">
+            <p>|PRESIDENT'S HONOUR ROLL</p>
 
-<div style="float: Right; display: inline-block; padding: 20px;">
-<h1 style="color:White" class="animated bounce"> CHOW HONG YUNG </h1>
-<h3 style="color:White" class="animated bounce"> STUDENT JOURNALIST</h3>
-</div>
-
-</div>
-</div>
-<div style="background-color:White;padding:10px;height:200px;width:480px; display: inline-block; float: left;">
-
-
-<div style="color: #484848"><h3>
- <i class="fas fa-wrench"></i> SKILL</h3></div>
-
-<div style= "display: inline-block;float:left; width: 200px; height: 100px;">
-<p>|LANGUAGE</p>
-<ul>
-	<li>Cantonese (Native)</li>
-    <li>English (Fluent)</li>
-    <li>Madarin (Fair)</li>
-    </ul>
-</div>
-
-<div style= "display: inline-block;float:right;">
-<p>|GENERAL</p>
-<ul>
-	<li>Data Journalism</li>
-    <li>Social Media Newsgathering</li>
-    <li>Marketing</li>
-    <li>Graphic Design</li>
-    </ul>
-</div>
-
-</div>
-
-<div style="colour: #484848;background-color:White; padding:10px;height:200px;width:480px;display: inline-block;float: right">
-
-<div style="color: #484848"><h3>
- <i class="fas fa-laptop"></i> SOFTWARE</h3></div>
-
-<p>|SKILL LEVEL</p>
-<img src="https://i.imgur.com/uFC2lvk.png" title="source: imgur.com" Width="400px" Height="150px" /></a>
-
-</div>
-
-</div>
-<div style="clear: both"></div>
-
-<div id="wrapper">
-
-<div style="background-color:White;padding:10px;height:200px;width:480px; display: inline-block; float: left;">
-
-
-<div style="color: #484848"><h3>
- <i class= "fas fa-graduation-cap fa-sm"></i> EDUCATION</h3></div>
-
-<p><span style="#484848"> |HONG KONG BAPTIST UNIVERSITY (2015 - 2019)</p>
-<ul><li>BSocSc (Hons) Internaitonal Journalism</li></ul>
-
-<p><span style="#484848">|BOWLING GREEN STATE UNIVERISTY (2017 - 2018, Semester 1) </p>
-<ul><li>Exchange Student</li></ul>	
-</div>
-
-
-<div style="colour: #484848;background-color:White; padding:10px;height:200px;width:480px;display: inline-block;float: right">
-
-<div style="color: #484848"><h3>
- <i class="fas fa-trophy"></i> HONOUR AND AWARD</h3></div>
-
-<p>|THE YOUNG REPORTER AWARD 2017</p>
-<ul>
-	<li>Best Investigative Story 1st Place</li>
-    <li>Best Infographic 2nd Place</li></ul>
-
-<p>|PRESIDENT'S HONOUR ROLL</p>
-
-<p>|DEAN'S LIST</p>
-
-</div>
-</div>
-<div style="clear: both"></div>
-
-<div id="wrapper">
-<div style="background-color:White;padding:10px;height:200px;width:480px; display: inline-block; float: left;">
-
-<div style="color: #484848"><h3>
- <i class="fas fa-pencil-alt"></i> ACADEMIC EXPERIENCE</h3></div>
-
-<p><span style="#484848">| THE YOUNG REPORTER</p>
-
-<p><span style="#484848"> 
-<ul>
-	<li>Multimedia Editor</li>
-    <li>Reporter</li></ul>
-
-
-<p><span style="#484848">
-| HONG KONG BAPTIST UNIVERSITY BUSINESS UNITED SOCIETY
-</p>
-<ul>
-	<li>Promotion Officer</li></ul>
-</div>
-
-<div style="colour: #484848;background-color:White; padding:10px;height:200px;width:480px;display: inline-block;float: right">
-
-<div style="color: #484848"><h3>
-<i class="fas fa-briefcase" ></i></i> WORKING EXPERIENCE</h3></div>
-
-<p>|FRENCH TOUCH</p>
-<ul>
-	<li>Hostess</li>
-</div>
-</div>
-
-<div style="clear: both"></div>
-
-<div id="wrapper">
-	
-<div style="color: #484848"><h3>
- <i class="fas fa-camera-retro"></i> PHOTO WALL</h3></div>
-<style type="text/css">
-<!--
-#DIV_A{
-    display:inline-block;
-    width:300px;
-    height:200px;
-    border:0px;
-    margin-right:10px;
-    margin-bottom:10px;
-}
-#DIV_B{
-    display:inline-block;
-    width:300px;
-    height:200px;
-    border:0px;
-    margin-right:10px;
-    margin-bottom:10px;
-}
-#DIV_C{
-    display:inline-block;
-    width:300px;
-    height:200px;
-    border:0px;
-    margin-right:10px;
-    margin-bottom:10px;
-}
--->
-</style>
-<div id="DIV_A">
-   <img src="https://hongyungyo.files.wordpress.com/2016/10/img_9619.jpg?w=696&h=&crop=1&zoom=2" width="300" height="200">
-</div>
-<div id="DIV_A">
-   <img src="https://hongyungyo.files.wordpress.com/2016/10/img_9494.jpg?w=696&h=&crop=1&zoom=2" width="300" height="200">
-</div>
-<div id="DIV_A">
-   <img src="https://hongyungyo.files.wordpress.com/2016/10/img_9495.jpg?w=1400&h=&crop=1" width="300" height="200">
-</div>
-<div id="DIV_B">
-   <img src="https://hongyungyo.files.wordpress.com/2016/10/img_9609.jpg?w=1400&h=&crop=1" width="300" height="200">
-</div>
-<div id="DIV_B">
-   <img src="https://hongyungyo.files.wordpress.com/2016/10/img_9587.png?w=1400&h=&crop=1" width="300" height="200">
-</div>
-<div id="DIV_B">
-   <img src="https://hongyungyo.files.wordpress.com/2016/10/img_96031.jpg?w=1400&h=&crop=1" width="300" height="200">
-</div>
-<div id="DIV_C">
-   <img src="https://hongyungyo.files.wordpress.com/2016/10/img_9547.png?w=1400&h=&crop=1" width="300" height="200">
-</div>
-<div id="DIV_C">
-   <img src="https://hongyungyo.files.wordpress.com/2016/10/img_9576.png?w=1400&h=&crop=1" width="300" height="200">
-</div>
-<div id="DIV_C">
-   <img src="https://hongyungyo.files.wordpress.com/2016/10/img_9546.jpg?w=1400&h=&crop=1" width="300" height="200">
-</div>
-
-</div>
-</div>
+            <p>|DEAN'S LIST</p>
+        </div>
+        <div class="box generalskill">
+            <div style="color: #484848">
+                <h3>
+                    <i class="fas fa-trophy"></i> GENERAL SKILLS</h3>
+            </div>
+            <ul>
+                <li>Data Journalism</li>
+                <li>Social Media Newsgathering</li>
+                <li>Marketing</li>
+                <li>Graphic Design</li>
+                <li>Trilingual Speaking and Writing</li>
+            </ul>
+        </div>
+        <div class="box portfolio">
+            <div style="color: #484848">
+                <h3>
+                    <i class="fas fa-trophy"></i> PORTFOLIO</h3>
+            </div>
+        </div>
+        <div class="box level">skill level</div>
+        <div class="box academic">academic</div>
+        <div class="box working">working</div>
+    </div>
 </body>
+
+</html>
