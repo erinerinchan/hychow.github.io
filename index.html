@@ -1,294 +1,478 @@
 <html>
 
 <head>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <title>HY Chow</title>
-    <style>
-            .container {
-            display: grid;
-            grid-template-areas: grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-auto-rows: minmax(100px, auto);
-            grid-gap: 0.5em;
-            justify-items: stretch;
-            align-items: stretch;
-        }
-        
-        .title {
-            grid-column: 1/4;
-            grid-row: 1/3;
-            padding: 1em;
-            background-color: maroon;
-        }
-        
-        .info {
-            grid-column: 4/5;
-            grid-row: 1/3;
-            padding: 1em;
-            background-color: #9b9b9b;
-        }
-        
-        .education {
-            grid-column: 2/4;
-            grid-row: 3/5;
-            background-color: #c4c0c0;
-            padding: 1em;
-        }
-        
-        .honour {
-            grid-column: 1/2;
-            grid-row: 3/5;
-            background-color: #9b9b9b;
-            padding: 1em;
-        }
-        
-        .generalskill {
-            grid-column: 4/5;
-            grid-row: 3/5;
-            background-color: #9b9b9b;
-            padding: 1em;
-        }
-        
-        .portfolio {
-            grid-column: 1/2;
-            grid-row: 5/7;
-            background-color: #c4c0c0;
-            padding: 1em;
-        }
-        
-        .level {
-            grid-column: 2/5;
-            grid-row: 5/7;
-            background-color: #9b9b9b;
-            padding: 1em;
-        }
-        
-        .working {
-            grid-column: 1/3;
-            grid-row: 7/9;
-            padding: 1em;
-            background-color: #9b9b9b;
-        }
-        
-        .academic {
-            grid-column: 3/5;
-            grid-row: 7/9;
-            padding: 1em;
-            background-color: #c4c0c0;
-            ;
-        }
-        
-        .academicA {
-            background-color: #c4c0c0;
-            width: 800px;
-            height: 120px;
-            overflow: scroll;
-        }
-        
-        h1 {
-            font-family: Futura;
-            font-size: 32px;
-            font-style: normal;
-            font-variant: normal;
-            font-weight: 500;
-            line-height: 26.4px;
-            color: white;
-        }
-        
-        h3 {
-            color: white;
-            font-family: Futura;
-            font-size: 20px;
-            font-style: normal;
-            font-variant: normal;
-            font-weight: 200;
-            line-height: 15.4px;
-        }
-        
-        p {
-            color: white;
-            font-family: sans-serif;
-            font-size: 10px;
-            font-style: normal;
-            font-variant: normal;
-            font-weight: 200;
-            line-height: 20px;
-        }
-        
-        li {
-            color: white;
-            font-family: sans-serif;
-            font-size: 10px;
-            font-style: normal;
-            font-variant: normal;
-            font-weight: 200;
-            line-height: 20px;
-        }
-        
-        @media(max-width:900px) {
-            .container {
-                display: grid;
-                grid-template-areas: 'title' 'info' 'honour' 'education' 'generalskill' 'level' 'portfolio' 'academic' 'working';
-            }
-            .title {
-                grid-area: title;
-                font-style: h1;
-            }
-            .info {
-                grid-area: info;
-                background-color: #c4c0c0;
-            }
-            .honour {
-                grid-area: honour;
-                background-color: #9b9b9b;
-            }
-            .education {
-                grid-area: education;
-                background-color: #c4c0c0;
-            }
-            .generalskill {
-                grid-area: generalskill;
-                background-color: #9b9b9b;
-            }
-            .level {
-                grid-area: level;
-                background-color: #c4c0c0;
-            }
-            .portfolio {
-                grid-area: portfolio;
-                background-color: #9b9b9b;
-            }
-            .academic {
-                grid-area: academic;
-                background-color: #c4c0c0;
-            }
-            .working {
-                grid-area: working;
-                background-color: #9b9b9b;
-            }
-    </style>
+
+    <link rel="stylesheet" href="animate.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Tenor Sans' rel='stylesheet'>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>HY CHOW</title>
 </head>
 
+<style>
+    h1 {
+        font-family: 'Quicksand';
+        font-size: 30px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 600;
+        line-height: 26.4px;
+        color: white;
+    }
+    
+    h3 {
+        font-family: 'Quicksand';
+        font-size: 20px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 200;
+        line-height: 15.4px;
+        color: rgba(54, 54, 54, 0.863);
+    }
+    
+    h4 {
+        font-family: 'Quicksand';
+        font-size: 15px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 500;
+        line-height: 26.4px;
+        color: white;
+    }
+    
+    p {
+        font-family: 'Quicksand';
+        font-size: 10px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 200;
+        line-height: 20px;
+        color: dimgrey;
+    }
+    
+    li {
+        font-family: 'Quicksand';
+        font-size: 10px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 200;
+        line-height: 20px;
+    }
+    
+    #header {
+        background-color: rgba(114, 113, 113, 0.445);
+        padding: 30px;
+    }
+    
+    body {
+        background-color: hsla(0, 0%, 87%, 0.034);
+        background-repeat: repeat;
+    }
+    
+    * {
+        box-sizing: border-box
+    }
+    
+    .containerbar {
+        width: 100%;
+        background-color: #ddd;
+        border-radius: 15px;
+    }
+    
+    .skills {
+        line-height: 10px;
+        column-rule-color: hsla(352, 93%, 16%, 0.795);
+        border-radius: 15px;
+    }
+    
+    .Premiere {
+        width: 80%;
+        background-color: hsla(352, 93%, 16%, 0.795);
+    }
+    
+    .AI {
+        width: 80%;
+        background-color: hsla(352, 93%, 16%, 0.795);
+    }
+    
+    .PS {
+        width: 70%;
+        background-color: hsla(352, 93%, 16%, 0.795);
+    }
+    
+    .AE {
+        width: 65%;
+        background-color: hsla(352, 93%, 16%, 0.795);
+    }
+    
+    .AU {
+        width: 60%;
+        background-color: hsla(352, 93%, 16%, 0.795);
+    }
+    
+    .ID {
+        width: 60%;
+        background-color: hsla(352, 93%, 16%, 0.795);
+    }
+    
+    .button {
+        background-color: #6b6b6bd0;
+        border-radius: 15px;
+        font-family: 'Quicksand';
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+    
+    #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: #333;
+        color: #fff;
+        opacity: 0.8;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 30px;
+        font-size: 17px;
+    }
+    
+    #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+    
+    @-webkit-keyframes fadein {
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+        to {
+            bottom: 30px;
+            opacity: 0.8;
+        }
+    }
+    
+    @keyframes fadein {
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+        to {
+            bottom: 30px;
+            opacity: 0.8;
+        }
+    }
+    
+    @-webkit-keyframes fadeout {
+        from {
+            bottom: 30px;
+            opacity: 0.8;
+        }
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
+    }
+    
+    @keyframes fadeout {
+        from {
+            bottom: 30px;
+            opacity: 0.8;
+        }
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
+    }
+</style>
+
 <body>
-    <div class="container">
-        <div class="box title">
-                <h1 style="color:White"> CHOW HONG YUNG </h1>
-                <h3 style="color:White"> //STUDENT JOURNALIST</h3>
-                <p>Transforming the chaotic world into a harmony of words and visual</p>
-        </div>
-        <div class="box info">
-            <div style="color:white">
-                <h3>
-                    <i class="fas fa-info-circle"></i> GENERAL INFO</h3>
-            </div>
-            <div style="color:white">
-                <p>
-                    <i class="fas fa-location-arrow"></i> LOCATION| Hong Kong</p>
-            </div>
-            <div style="color:white">
-                <p>
-                    <i class="fas fa-envelope-open"></i> EMAIL| 15216187@life.hkbu.edu.hk</p>
-            </div>
-            <div style="color:white">
-                <p>
-                    <i class="fas fa-book"></i> INTEREST| Multimedia Production and Feature Writing</p>
-            </div>
-            <div style="color:white">
-                <p>
-                    <i class="fas fa-at"></i> WEBPAGE| https://hongyungyo.wordpress.com/</p>
-            </div>
-        </div>
-        <div class="box education">
-            <div style="color:white">
-                <h3>
-                    <i class="fas fa-graduation-cap fa-sm"></i> EDUCATION</h3>
-            </div>
-            <p>|HONG KONG BAPTIST UNIVERSITY (2015 - 2019)</p>
-            <ul>
-                <li>BSocSc (Hons) Internaitonal Journalism</li>
-            </ul>
-
-            <p>|BOWLING GREEN STATE UNIVERISTY (2017 - 2018, Semester 1) </p>
-            <ul>
-                <li>Exchange Student</li>
-            </ul>
-        </div>
-        <div class="box honour">
-            <div style="color: #484848">
-                <h3>
-                    <i class="fas fa-trophy"></i> HONOURS</h3>
-            </div>
-            <p>|THE YOUNG REPORTER AWARD 2017</p>
-            <ul>
-                <li>Best Investigative Story 1st Place</li>
-                <li>Best Infographic 2nd Place</li>
-            </ul>
-
-            <p>|PRESIDENT'S HONOUR ROLL</p>
-
-            <p>|DEAN'S LIST</p>
-        </div>
-        <div class="box generalskill">
-            <div style="color: #484848">
-                <h3>
-                    <i class="fas fa-wrench"></i> GENERAL SKILLS</h3>
-            </div>
-            <ul>
-                <li>Data Journalism</li>
-                <li>Social Media Newsgathering</li>
-                <li>Marketing</li>
-                <li>Graphic Design</li>
-                <li>Trilingual Speaking and Writing</li>
-            </ul>
-        </div>
-        <div class="box portfolio">
-            <p></p>
-            <center>
-                <a href="http://hongyungyo.wordpress.com">
-                    <div style="color:white">
-                        <i class="fas fa-file-archive fa-10x"></i>
+    <div id="header">
+        <center>
+            <p>&nbsp;</p>
+            <a href="https://hongyungyo.wordpress.com/"><img src="https://i.imgur.com/hecuH1r.png" title="source: imgur.com" width="300" height="300" /> </a>
+            <h1 class="fadeIn" align="center"> CHOW HONG YUNG</h1>
+            <h3 style="color:white;"> STUDENT JOURNALIST</h4>
+                <p>&nbsp;</p>
+                <h4 style="color:white;"> Currently studying in HKUB@Communication - International Journalism</h4>
+                <h4 style="color:white;"> </h4>
+                <div class='row'>
+                    <div class='col-md-4'>
+                        <h4 style="color:white;">Location: Hong Kong</h4>
                     </div>
-                </a>
-                <h1>PORTFOLIO</h1>
-            </center>
-        </div>
-        <div class="box level">
-            <h3><i class="fas fa-star"></i></i> SKILLS LEVEL</h3>
-        </div>
-        <div class="box academic">
-            <h3><i class="fas fa-pencil-alt"></i> ACADEMIC EXPERIENCE</h3>
-            <div class="box academicA">
-                <p>| THE YOUNG REPORTER - Multimedia Editor</p>
-                <p>
-                    <ul>
-                        <li>Assist reporters to produce news stories on multi-platforms</li>
-                        <li>Generate ideas to deliver visual-compelling news stories</li>
-                        <li>Edit news contents in a timely and accurate manner</li>
-                    </ul>
-                    <p>| THE YOUNG REPORTER - Reporter</p>
-                    <p>
-                        <ul>
-                            <li>Provide coverage of soft and hard news for print and online media</li>
-                            <li>Present news stories in texts, photos, videos and infographics</li>
-                            <li>Gather and verify information through observation, research and interview</li>
-                        </ul>
-                        <p>| HONG KONG BAPTIST UNIVERSITY BUSINESS UNITED SOCIETY - Promotion Officer</p>
-                        <ul>
-                            <li>Produce promotional materials, such as flyers, posters and souvenirs</li>
-                            <li>Generate ideas and themes for multiple events</li>
-                            <li>Organize variety of activities for over 200 members</li>
-                        </ul>
+                    <div class='col-md-4'>
+                        <h4 style="color:white;">Email: 15216187@life.hkbu.edu.hk
+                        </h4>
+                    </div>
+                    <div class='col-md-4'>
+                        <h4 style="color:white;">Position: Mulitmedia editor@The Young Reporter</h4>
+                    </div>
+                    <p>&nbsp;</p>
+                    <button class='button' onclick="myFunction()">Read my work?</button>
+
+                    <div id="snackbar">Click my face...</div>
+
+                    <script>
+                        function myFunction() {
+                            var x = document.getElementById("snackbar")
+                            x.className = "show";
+                            setTimeout(function() {
+                                x.className = x.className.replace("show", "");
+                            }, 3000);
+                        }
+                    </script>
+
+                </div>
+                <p>&nbsp;</p>
+        </center>
+    </div>
+    <p>&nbsp;</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>EDUCATION</h3>
+                <p>&nbsp;</p>
+                <p id='education'></p>
+                <script>
+                    Education = [{
+                        Year: '2015 - 2019',
+                        Uni: 'HONG KONG BAPTIST UNIVERISTY',
+                        Major: 'BSocSc (Hons) International Journalism'
+                    }, {
+                        Year: '2017 - 2018 (Semester 1)',
+                        Uni: 'BOWLING GREEN STATE UNIVERSITY',
+                        Major: 'Exchange Student'
+                    }]
+
+                    o = document.getElementById('education')
+
+                    allItemString = '';
+                    for (i = 0; i < Education.length; i++) {
+                        console.log(i);
+
+                        itemString = Education[i]['Year'] + '|' + Education[i]['Uni'] +
+                            ' <p>' + Education[i]['Major'] + '</p>';
+
+                        allItemString = allItemString + itemString;
+
+                        o.innerHTML = "<ul>" + allItemString + "</ul>";
+
+                    }
+                </script>
+                <p>&nbsp;</p>
+            </div>
+            <div class="col-md-6">
+                <h3>HONOURS AND AWARDS</h3>
+                <p>&nbsp;</p>
+                <p id='honoursandawards'></p>
+                <script>
+                    HonourAndAward = [{
+                        Prize: 'THE YOUNG REPORTER 2017',
+                        TitleOrYear: 'Best Investigative Story 1st Place',
+                        TitleOrYear: 'Best Infographic 2nd Place',
+                    }, {
+                        Prize: 'PRESIDENTS HONOUR ROLL',
+                        TitleOrYear: 'Semester 2, 2016-2017',
+                        TitleOrYear: 'Semester 1, 2015-2016',
+                    }, {
+                        Prize: 'DEAN&#39;S LIST',
+                        TitleOrYear: 'Semester 1, 2016-2017',
+                        TitleOrYear: 'Semester 2, 2015-2016',
+                    }]
+
+                    o = document.getElementById('honoursandawards')
+
+                    allItemString = '';
+                    for (i = 0; i < HonourAndAward.length; i++) {
+                        console.log(i);
+
+                        itemString = '<p>' + HonourAndAward[i]['Prize'] + '<li>' + HonourAndAward[i]['TitleOrYear'] + '</li>' +
+                            ' <li>' + HonourAndAward[i]['TitleOrYear'] + '</li>' + '</p>';
+
+                        allItemString = allItemString + itemString;
+
+                        o.innerHTML = "<ul>" + allItemString + "</ul>";
+
+                    }
+                </script>
             </div>
         </div>
-        <div class="box working">
-            <h3><i class="fas fa-briefcase"></i> WORKING EXPERIENCE</h3>
-            <p>|FRENCH TOUCH - Hostess</p>
-            <ul>
-                <li>Provide customer services</li>
-                <li>Assist in registration</li>
-                <li>Distribute promotional materials</li>
-            </ul>
+        <div class='row'>
+            <div class='col-md-6'>
+                <h3>GENERAL SKILLS</h3>
+                <p>&nbsp;</p>
+                <p id='generalskills'></p>
+                <script>
+                    Generalskills = [{
+                        Skill: 'Data Journalism'
+                    }, {
+                        Skill: 'Social Media Newsgathering'
+                    }, {
+                        Skill: 'Marketing'
+                    }, {
+                        Skill: 'Graphic Design'
+                    }, {
+                        Skill: 'Trilingual Speaking and Writing'
+                    }]
+
+                    o = document.getElementById('generalskills')
+
+                    allItemString = '';
+                    for (i = 0; i < Generalskills.length; i++) {
+                        console.log(i);
+
+                        itemString = '<li>' + Generalskills[i]['Skill'] +
+                            ' </li>';
+
+                        allItemString = allItemString + itemString;
+
+                        o.innerHTML = "<ul>" + allItemString + "</ul>";
+
+                    }
+                </script>
+                <p>&nbsp;</p>
+            </div>
+            <div class='col-md-6'>
+                <h3>SKILL LEVELS</h3>
+                <p>&nbsp;</p>
+                <p>Premiere Pro</p>
+                <div class="containerbar">
+                    <div class="skills Premiere">_</div>
+                </div>
+
+                <p>Illustrator</p>
+                <div class="containerbar">
+                    <div class="skills AI">_</div>
+                </div>
+
+                <p>Photoshop</p>
+                <div class="containerbar">
+                    <div class="skills PS">_</div>
+                </div>
+
+                <p>After Effect</p>
+                <div class="containerbar">
+                    <div class="skills AE">_</div>
+                </div>
+
+                <p>Audacity</p>
+                <div class="containerbar">
+                    <div class="skills AU">_</div>
+                </div>
+
+                <p>In Design</p>
+                <div class="containerbar">
+                    <div class="skills ID">_</div>
+                </div>
+            </div>
         </div>
-    </div>
+        <p>&nbsp;</p>
+        <div class='row'>
+            <div class='col-md-6'>
+                <h3>WORKING EXPERIENCE</h3>
+                <p>&nbsp;</p>
+                <p id='job'></p>
+                <script>
+                    Job = [{
+                        Company: 'FRENCH TOUGH/GL EVENT',
+                        Title: 'Hostess',
+                        ExtraInfo: 'International Event, Exhibition, Conference, Exhibition',
+                        Duty1: 'Provide customer serivce',
+                        Duty2: 'Assist in registration',
+                        Duty3: 'Distribute promotional materials'
+                    }]
+
+                    o = document.getElementById('job')
+
+                    allItemString = '';
+                    for (i = 0; i < Job.length; i++) {
+                        console.log(i);
+
+                        itemString = Job[i]['Company'] +
+                            '|' + Job[i]['Title'] +
+                            '<p>' + '<i>' + Job[i]['ExtraInfo'] + '</i>' + '</p>' +
+                            '<li>' + Job[i]['Duty1'] + ' </li>' +
+                            '<li>' + Job[i]['Duty2'] + ' </li>' +
+                            '<li>' + Job[i]['Duty3'] + ' </li>';
+
+                        allItemString = allItemString + itemString;
+
+                        o.innerHTML = "<ul>" + allItemString + "</ul>";
+
+                    }
+                </script>
+                <p>&nbsp;</p>
+            </div>
+            <div class='col-md-6'>
+                <h3>ACADEMIC EXPERIENCE</h3>
+                <p>&nbsp;</p>
+                <p id='academic'></p>
+                <script>
+                    Academic = [{
+                        Company: 'THE YOUNG REPORTER',
+                        Title: 'Multi-media Editor',
+                        ExtraInfo: 'Jan 2018 - Now',
+                        Duty1: 'Assist reporters to produce news stories on multi-platforms',
+                        Duty2: 'Generate ideas to deliver visual-compelling news stories',
+                        Duty3: 'Edit news contents in a timely and accurate manner'
+                    }, {
+                        Company: 'THE YOUNG REPORTER',
+                        Title: 'Reporter',
+                        ExtraInfo: 'Jan 2017 - Dec 2017',
+                        Duty1: 'Provide coverage of soft and hard news for print and online media',
+                        Duty2: 'Present news stories in texts, photos, videos and infographics',
+                        Duty3: 'Gather and verify information through observation, research and interview'
+                    }, {
+                        Company: 'HONG KONG BAPTIST UNIVERSITY BUSINESS UNITED SOCEITY',
+                        Title: 'Promotion Officer',
+                        ExtraInfo: 'July 2016 - July 2017',
+                        Duty1: 'Produce promotional materials, such as flyers, posters and souvenirs',
+                        Duty2: 'Generate ideas and themes for multiple events',
+                        Duty3: 'Organize variety of activities for over 200 members'
+                    }]
+
+                    o = document.getElementById('academic')
+
+                    allItemString = '';
+                    for (i = 0; i < Academic.length; i++) {
+                        console.log(i);
+
+                        itemString = Academic[i]['Company'] +
+                            '|' + Academic[i]['Title'] +
+                            '<p>' + '<i>' + Academic[i]['ExtraInfo'] + '</i>' + '</p>' +
+                            '<li>' + Academic[i]['Duty1'] + ' </li>' +
+                            '<li>' + Academic[i]['Duty2'] + ' </li>' +
+                            '<li>' + Academic[i]['Duty3'] + ' </li>' + '<p>&nbsp;</p>';
+
+                        allItemString = allItemString + itemString;
+
+                        o.innerHTML = "<ul>" + allItemString + "</ul>";
+
+                    }
+                </script>
+            </div>
+        </div>
+
 </body>
 
 </html>
