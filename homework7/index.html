@@ -21,7 +21,7 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    
+
     <title>Budget Analysis</title>
 </head>
 
@@ -114,7 +114,7 @@
     
     p {
         font-family: 'Quicksand';
-        font-size: 15px;
+        font-size: 18px;
         font-style: normal;
         font-variant: normal;
         font-weight: 200;
@@ -164,6 +164,7 @@
                 <div class='col-md-7'>
                     <p>&nbsp;</p>
                     <h4 class="animated fadeInDown" align='left'>| TOTAL PUBLIC EXPENDITURE BY POLICY AREA GROUP</h3>
+                        <br>
                         <p class="animated fadeInDown" align='left'>The government usually divides public expenditure into 7 groups, which are “Health”, “Social Welfare”, “Health”, “Security”, “Infrastructure”, “Environment and Food”, “Economic”, “Housing” and “Others”.
                         </p>
                         <p class="animated fadeInDown" align='left'>The chart reflects the estimated and actual total expenditure by different policy area from 2010 to 2016.
@@ -176,10 +177,10 @@
     <p>&nbsp;</p>
     <div class="container">
         <center>
-            <p>&nbsp;</p>
+            <br>
+            <br>
             <div class='row'>
-                <div class='col-md-1'></div>
-                <div class='col-md-5'>
+                <div class='col-md-7'>
                     <p> <span class="dot1"></span> 2016
                         <span class="dot2"></span> 2015
                         <span class="dot3"></span> 2014
@@ -187,58 +188,34 @@
                         <span class="dot5"></span> 2012
                         <span class="dot6"></span> 2011
                         <span class="dot7"></span> 2010</p>
-                </div>
-                <div class='col-md-5'>
-                    <p>&nbsp;</p>
-                </div>
-            </div>
-            <div class='row'>
-                <div class='col-md-1'></div>
-                <div class='col-md-5'>
-                    <p> x-axis= Estimated $B | y-axis= Actual $B</p>
-                </div>
-                <div class='col-md-5'>
-                    <p>&nbsp;</p>
-                </div>
-            </div>
-            <div class='row;'>
-                <div class='col-md-7'>
+                    <p> x-axis= Actual $B | y-axis= Estimated $B</p>
                     <svg>
                 <path transform="translate(200, 0)"></path>
                 </svg>
-
                     <script>
                         var data = [
                             [400, 50],
                             [-150, 640],
                         ];
-
                         var lineGenerator = d3.line();
                         var pathString = lineGenerator(data);
-
                         d3.select('path')
                             .attr('d', pathString);
                         var x = d3.scaleLinear()
                             .domain([0, 100]) //range of ur raw data (input)
                             .range([10, 600]); // range of svg coordinate (output) //spread it bigger after chang suv in width
-
                         var y = d3.scaleLinear()
                             .domain([0, 100]) //range of ur raw data (input)
                             .range([600, 0]); // range of svg coordinate (output) //spread it bigger
-
                         var xAxis = d3.axisBottom().scale(x); //Axis place // [.ticks(5)] how many scale
                         var yAxis = d3.axisLeft().scale(y);
-
                         var svg = d3.select("svg").append("g").attr("transform", "translate(40, 40)"); //margin
-
                         svg.append('g')
                             .attr('transform', 'translate(0,600)')
                             .call(xAxis);
-
                         svg.append('g')
                             .attr('transform', 'translate(10,0)') // axis coordinates
                             .call(yAxis);
-
                         var dataset = [
                             ['Education', [{
                                 'colour': '#1442cc',
@@ -444,15 +421,12 @@
                                 'weight': 17.4,
                             }, ]],
                         ]
-
                         var frameHeight = 150;
-
                         var yearLabel = svg.append("text")
                             .attr('x', 20)
                             .attr('y', 40)
                             .attr('font-size', 20)
                             .attr('font-family', 'Quicksand');
-
                         svg
                             .selectAll('circle') //select circle ( bind elements to data)
                             .data(dataset[0][1]) // bind data
@@ -472,13 +446,10 @@
                             .attr('fill', function(d) {
                                 return d.colour
                             });
-
                         yearLabel.text("Education");
-
                         var keySnapshot = 0;
                         d3.interval(function() {
                             keySnapshot = (keySnapshot + 1) % dataset.length;
-
                             svg
                                 .selectAll('circle') //select circle ( bind elements to data)
                                 .data(dataset[keySnapshot][1]) // bind data
@@ -495,33 +466,34 @@
                                     return d['weight'] / 10; //(large gap)
                                     //return Math.sqrt(d['weight']); // (small gap)
                                 })
-
                             yearLabel.text("" + dataset[keySnapshot][0]);
                             //.attr('fill', '#00ff00');
-
                         }, 1500)
                     </script>
                 </div>
                 <div class='col-md-5'>
                     <h3>| How to read?</h3>
                     <br>
-                    <p align='left'>1. The closer the dot to the diagonal line = the more accurate the budget is</p>
-                    <p align='left'>2. The bigger the dot = the larger the amount of money spent</p>
-                    <p align='left'>3. The higher the dot = the larger the amount of money spent</p>
-                    <br>
-                    <h3>| What's special?</h3>
-                    <br>
-                    <p align="left">| How accurate is your government?</p>
-                    <p align='left'>The estimated amounts of expenditure are often not the same to the actual ones. The less accurate groups are “Health”, “Infrastructure”, “Economic” and “Housing”.</p>
-                    <br>
-                    <p align="left">| Which policy area group receives most money?</p>
-                    <p align='left'>Government spends the most on “Education” and “Infrastructure”, then “Social Welfare” and “Health, and the least on “Economic”, “Housing”, and “Environment and Food”.
-                    </p>
-                    <br>
-                    <p align="left">| Overall trend?</p>
-                    <p align='left'>Government spends more money on each aspect gradually. Yet, in 2016, the government seems to put less focus on "Housing" and "Economic". It may be because of the changing of government's guiding principles.
-                    </p>
-                    <h5 align="left">"Others" is excluded due to its lack of contexts. Data are retrieved from official documents.</h5>
+                    <p align='left'>1. Dot close to diagonal line = more accurate</p>
+                    <p align='left'>2. Dot above diagonal line = spent > expected</p>
+                    <p align='left'>3. Dot below diagonal line = spent
+                        < expected </p>
+                            <p align='left'>4. Bigger & higher dot = larger amount of money spent</p>
+                            <br>
+                            <h3>| What's special?</h3>
+                            <br>
+                            <p align="left">| How accurate is your government?</p>
+                            <p align='left'>The estimated amounts of expenditure are often not the same to the actual ones. The least accurate groups are “Health”, “Infrastructure”, “Economic” and “Housing”.</p>
+                            <p align='left'>The strangest case would be "Housing" in 2016, which the government used much more than it expected.</p>
+                            <br>
+                            <p align="left">| Which policy area group receives most money?</p>
+                            <p align='left'>Government spends the most on “Education” and “Infrastructure”, then “Social Welfare” and “Health, and the least on “Economic”, “Housing”, and “Environment and Food”.
+                            </p>
+                            <br>
+                            <p align="left">| Overall trend?</p>
+                            <p align='left'>Government spends more money on each aspect gradually. Yet, in 2016, the government seems to put less focus on "Housing" and "Economic".
+                            </p>
+                            <h5 align="left">"Others" is excluded due to its lack of contexts. Data are retrieved from official documents.</h5>
                 </div>
             </div>
         </center>
