@@ -87,10 +87,11 @@ h1 {
         padding: 20px;
         }
     
-        body {
+    body {
         background-color: hsla(0, 9%, 98%, 0);
         background-repeat: repeat;
         }
+        
     </style>
 
 </head>
@@ -125,8 +126,6 @@ h1 {
     <br>
             <h3>| World's Biggest Data Breach (in thousand)</h3>
     <br>
-        <button id="byyear">By Year</button>
-        <button id="combine">Combine</button>
     <div id="chart"></div>
 
     <script>
@@ -187,10 +186,6 @@ h1 {
                     .on("dbclick", function(){
                         d3.select(this)
                         .text(function(d){return d.entity;})})
-            
-            d3.select("#byyear").on("click", function(){
-                console.log("You clicked me")
-            })
             
                 simulation.nodes(datapoints)
                 .on('tick', ticked)
