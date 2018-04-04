@@ -71,7 +71,8 @@
                     .data(datapoints)
                     .enter().append("text")
                     .attr("class", "label")
-                    .attr("text-anchor", "middle")
+                    .attr("x", "20")
+                    .attr("y", "40")
                     .attr("fill", "hsla(0, 9%, 98%, 0)")
                     .attr("font-size", "12px")
                     .text(function(d) {
