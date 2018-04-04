@@ -162,9 +162,7 @@ h1 {
             }).strength(0.1)
             
             var forceY = d3.forceY(function(d){
-                if(d.years === 14){
-                    return 500}else{return 300}
-            }).strength(0.1)
+                    return height/2}).strength(0.1)
             
             var forceCollide = d3.forceCollide(function(d){
                 return radiusScale(d.records)
