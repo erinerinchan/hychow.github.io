@@ -29,6 +29,7 @@
         (function() {
             var width = 1000,
                 height = 1000;
+            
             var svg = d3.select("#chart")
                 .append("svg")
                 .attr("height", height)
@@ -55,7 +56,8 @@
                     .attr("r", function(d){
                         return radiusScale(d.records);
                     })
-                    .attr("fill", "lightblue")
+                    .attr("fill", function(d) {
+                                return d.colour} )
                 
             var labels = svg.selectAll(".label")
                     .data(datapoints)
