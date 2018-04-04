@@ -39,7 +39,7 @@
                 .append("g")
                 .attr("transform", "translate(0,0)")
             
-            var radiusScale = d3.scaleSqrt().domain([1,1370000]).range([10,100])
+            var radiusScale = d3.scaleSqrt().domain([1,1370000]).range([10,80])
             
             var simulation = d3.forceSimulation()
             .force("x",d3.forceX(function(d){
