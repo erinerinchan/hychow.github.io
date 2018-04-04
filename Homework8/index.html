@@ -65,17 +65,16 @@
                     .enter().append("text")
                     .attr("class", "label")
                     .attr("text-anchor", "middle")
-                    .attr("fill", "black")
+                    .attr("fill", "hsla(0, 9%, 98%, 0)")
                     .attr("font-size", "12px")
-                    .style("visibility","hidden")
                     .text(function(d) {
                     return d.entity;})
                     .on("mouseover", function(){
                         d3.select(this)
-                        .style("visibility","visible")})
+                        .attr("fill","black")})
                     .on("mouseout", function(){
                          d3.select(this)
-                         .style("visibility","hidden")})
+                         .attr("fill",""hsla(0, 9%, 98%, 0)")})
             
             
                 simulation.nodes(datapoints)
