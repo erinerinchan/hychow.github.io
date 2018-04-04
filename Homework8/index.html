@@ -132,7 +132,7 @@ h1 {
     <script>
         (function() {
             var width = 1000,
-                height = 3000;
+                height = 1000;
             
             var svg = d3.select("#chart")
                 .append("svg")
@@ -143,6 +143,12 @@ h1 {
             
             var radiusScale = d3.scaleSqrt().domain([1,1370000]).range([15,100])
             
+            var simulation = d3.forceSimulation()
+            .force("x",d3.forceX(width/2).strength(0.05))
+            .force("y",d3.forceY(height/2).strength(0.05))
+            .force("collide",d3.forceCollide(function(d){
+                return radiusScale(d.records);
+            }))
             d3.queue()
                 .defer(d3.csv, "data.csv")
                 .await(ready)
@@ -155,23 +161,7 @@ h1 {
                         return radiusScale(d.records)})
                     .attr("fill", function(d) {
                                 return d.colour});
-                        
-            var forceX = d3.forceX(function(d){
-                if(d.years === 13){
-                    return 500}else{return 300}
-            }).strength(0.1)
-            
-            var forceY = d3.forceY(function(d){
-                    return height/2}).strength(0.1)
-            
-            var forceCollide = d3.forceCollide(function(d){
-                return radiusScale(d.records)
-            })
-            
-            var simulation = d3.forceSimulation()
-            .force("x",d3.forceX)
-            .force("y",d3.forceY)
-            .force("collide",forceCollide)    
+                
                 
             var labels = svg.selectAll(".label")
                     .data(datapoints)
