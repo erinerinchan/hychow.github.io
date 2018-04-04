@@ -27,14 +27,14 @@ Bell,13,1900,telecoms,hacked
 Betfair,6,2300,web,hacked
 Bethesda Game Studios,7,200,gaming,hacked
 Blizzard,8,14000,gaming,hacked
-Blue Cross Blue Shield of Tennessee,5,"1,023",healthcare,lost / stolen device or media
-BNY Mellon Shareowner Services,4,"12,500",financial,lost / stolen device or media
+Blue Cross Blue Shield of Tennessee,5,1023,healthcare,lost / stolen device or media
+BNY Mellon Shareowner Services,4,12500,financial,lost / stolen device or media
 Brazzers,13,791,web,hacked
 British Airways,11,500,retail,hacked
 California Department of Child Support Services,8,800,government,lost / stolen device or media
 Cardsystems Solutions Inc,1,40000,financial,hacked
 Carefirst,11,1100,healthcare,hacked
-CarPhone Warehouse,11,"2,700",web,hacked
+CarPhone Warehouse,11,2700,web,hacked
 Cellebrite,13,3000,tech,hacked
 Central Hudson Gas & Electric,9,110,energy,hacked
 CEX,14,2000,retail,accidentally published
@@ -47,9 +47,9 @@ Citigroup,9,150,financial,poor security
 City and Hackney Teaching Primary Care Trust,3,160,government,lost / stolen device or media
 Classified Iraq War documents,6,392,government,inside job
 Clinton campaign,13,5000,government,hacked
-ClixSense,13,"6,600",web,hacked
+ClixSense,13,6600,web,hacked
 Colorado government,6,105,healthcare,lost / stolen computer
-Community Health Systems,10,"4,500",healthcare,hacked
+Community Health Systems,10,4500,healthcare,hacked
 Compass Bank,3,1000,financial,inside job
 Countrywide Financial Corp,2,2600,financial,inside job
 Countrywide Financial Corp,7,2500,financial,inside job
@@ -88,7 +88,7 @@ Gawker.com,6,1500,web,hacked
 Global Payments,8,7000,financial,hacked
 Gmail,10,5000,web,hacked
 Gmail,11,5000,web,hacked
-Greek government,8,"9,000",government,hacked
+Greek government,8,9000,government,hacked
 GS Caltex,4,11100,energy,inside job
 Hacking Team,11,500,web,hacked
 Hannaford Brothers Supermarket Chain,3,4200,retail,hacked
