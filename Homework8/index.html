@@ -143,14 +143,9 @@ h1 {
             
             var radiusScale = d3.scaleSqrt().domain([1,1370000]).range([15,100])
             
-            var forceX = d3.forceX(function(d){
-            if (d.records === '4000'){
-            return 200}else{
-            return 800}
-            }).strength(0.05)
             
             var simulation = d3.forceSimulation()
-            .force("x",d3.forceX)
+            .force("x",d3.forceX(width/2).strength(0.05))
             .force("y",d3.forceY(height/2).strength(0.05))
             .force("collide",d3.forceCollide(function(d){
                 return radiusScale(d.records);
