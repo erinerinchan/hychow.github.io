@@ -145,34 +145,8 @@ h1 {
             
             var forceY = d3.forceY(function(d){
                 if(d.years === "14"){
-                    return 2500}
-                if(d.years === "13"){
-                return 2000}
-                if(d.years === "12"){
-                return 1500}
-                if(d.years === "11"){
-                return 1000}
-                if(d.years === "10"){
-                return 950}
-                if(d.years === "9"){
-                return 900}
-                if(d.years === "8"){
-                return 850}
-                if(d.years === "7"){
-                return 800}
-                if(d.years === "6"){
-                return 750}
-                if(d.years === "5"){
-                return 700}
-                if(d.years === "4"){
-                return 650}
-                if(d.years === "3"){
-                return 600}
-                if(d.years === "2"){
-                return 550}
-                if(d.years === "1"){
-                return 500}
-            }).strength(0.05)
+                    return 2500}else{return 300}
+            }).strength(0.1)
             
             var simulation = d3.forceSimulation()
             .force("x",d3.forceX(width/2).strength(0.05))
