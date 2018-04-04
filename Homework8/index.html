@@ -132,7 +132,7 @@ h1 {
     <script>
         (function() {
             var width = 1000,
-                height = 1000;
+                height = 3000;
             
             var svg = d3.select("#chart")
                 .append("svg")
@@ -145,8 +145,33 @@ h1 {
             
             var forceY = d3.forceY(function(d){
                 if(d.years === "14"){
-                    return 200}else{
-                    return 800}
+                    return 2500}
+                if(d.year === "13"){
+                return 2000}
+                if(d.year === "12"){
+                return 1500}
+                if(d.year === "11"){
+                return 1000}
+                if(d.year === "10"){
+                return 950}
+                if(d.year === "9"){
+                return 900}
+                if(d.year === "8"){
+                return 850}
+                if(d.year === "7"){
+                return 800}
+                if(d.year === "6"){
+                return 750}
+                if(d.year === "5"){
+                return 700}
+                if(d.year === "4"){
+                return 650}
+                if(d.year === "3"){
+                return 600}
+                if(d.year === "2"){
+                return 550}
+                if(d.year === "1"){
+                return 500}
             }).strength(0.05)
             
             var simulation = d3.forceSimulation()
