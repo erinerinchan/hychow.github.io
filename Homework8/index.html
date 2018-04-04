@@ -70,14 +70,12 @@
                     return d.entity;
                     })
                     .style("visibility", function (d) {return d.entity === 1 ? "hidden" : "visible";})
-                            .on("mouseover", function (d) {if (d.entity === 2) {
-                             node.filter(function (d) { return d.entity === 1; })
-                             .style("visibility", "visible");}
-                             })
-                            .on("mouseout", function (d) {if (d.entity === 2) {
-                             node.filter(function (d) { return d.entity === 1; })
-                             .style("visibility", "hidden");
-                             });
+                    .on("mouseover", function (d) {if (d.entity === 2) 
+                        {node.filter(function (d) { return d.entity === 1; })
+                        .style("visibility", "visible");}})
+                    .on("mouseout", function (d) {if (d.entity === 2) 
+                        {node.filter(function (d) { return d.entity === 1; })
+                        .style("visibility", "hidden");}});
             
                 simulation.nodes(datapoints)
                 .on('tick', ticked)
