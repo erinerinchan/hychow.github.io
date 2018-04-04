@@ -3,11 +3,21 @@
 <head>
     <meta charset="utf-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+    
+<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>World's Biggest Data Breaches</title>
     <style>
         * {
-            font-family: "Helevtice Neue";
+            font-family: "Quicksand";
         }
         
         p,
@@ -18,11 +28,44 @@
         svg {
             background: #ffffff;
         }
+        
+        #header {
+        background-color: rgba(114, 113, 113, 0.445);
+        padding: 20px;
+        }
+    
+        body {
+        background-color: hsla(0, 9%, 98%, 0);
+        background-repeat: repeat;
+        }
     </style>
 
 </head>
 
 <body>
+        <div id="header">
+        <center>
+            <div class='row'>
+                <div class='col-md-5'>
+                    <p>&nbsp;</p>
+                    <h1 class="animated fadeInDown">// World's Biggest Data Breach // </h1>
+                    <p>&nbsp;</p>
+                </div>
+                <div class='col-md-7'>
+                    <p>&nbsp;</p>
+                    <h4 class="animated fadeInDown" align='left'>| Selected losses greater than 30,000 records</h3>
+                        <br>
+                        <p class="animated fadeInDown" align='left'>Recently, Facebook's data breach scandal which invovled 50 million users shook the world.
+                        </p>
+                        <p class="animated fadeInDown" align='left'>But is data breach a unprecedented news to us? Let's take a look.
+                        </p>
+                        <p>&nbsp;</p>
+                </div>
+            </div>
+        </center>
+    </div>
+    <div class='row'>
+    <div class='col-md-10'>
     <div id="chart"></div>
 
     <script>
@@ -100,6 +143,8 @@
         })();
         
     </script>
+        </div>
+    </div>
 </body>
 
 </html>
