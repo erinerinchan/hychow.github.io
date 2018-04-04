@@ -69,8 +69,14 @@
                     .attr("font-size", "12px")
                     .attr("font-family", "Quicksand")
                     .text(function(d) {
-                    return d.entity;
-                    })
+                    return d.entity;})
+                    .on("mouseover", function(){
+                        d3.select(this)
+                        .style("visibility","visible")})
+                    .on("mouseout", function(){
+                         d3.select(this)
+                         .style("visibility","hidden")})
+            
             
                 simulation.nodes(datapoints)
                 .on('tick', ticked)
