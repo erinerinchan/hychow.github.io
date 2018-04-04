@@ -173,6 +173,9 @@ h1 {
                         d3.select(this)
                         .text(function(d) {
                      return d.records;})})
+                    .on("dbclick", function(){
+                        d3.select(this)
+                        .text(function(d){return d.entity;})})
             
             
                 simulation.nodes(datapoints)
