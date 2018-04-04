@@ -72,10 +72,10 @@
                     return d.entity;})
                     .on("mouseover", function(){
                         d3.select(this)
-                        .style("visibility","hidden")})
+                        .style("visibility","visible")})
                     .on("mouseout", function(){
                          d3.select(this)
-                         .style("visibility","visible")})
+                         .style("visibility","hidden")})
             
             
                 simulation.nodes(datapoints)
