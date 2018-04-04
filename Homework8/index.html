@@ -71,17 +71,26 @@
                     return d.entity;
                     })
 
-            svg
-            .selectAll('labels')
-            .on('mouseover', function(){
-                d3.select(this)
-                .style("visibility", function (d) {return labels === 1 ? "hidden" : "visible";})
-                .on("mouseover", function (d) {if (labels === 2) 
-                {node.filter(function (d) { return labels === 1; })
-                .style("visibility", "visible");}})
-                .on("mouseout", function (d) {if (labels === 2) 
-                {node.filter(function (d) { return labels === 1; })
-                .style("visibility", "hidden");}});
+
+    svg
+        .selectAll('circle')
+        .on('mouseover', function() {
+            //NOTE: "this" is a DOM element
+            //      The function here is same as an event handler in plain JS
+            d3.select(this)
+                .attr('r', function(d) {
+                    //NOTE: enlarge by 2x
+                    return d['weight'] / 5;
+                })
+                .attr('fill', 'darkgreen')
+        })
+        .on('mouseout', function() {
+            d3.select(this)
+                .attr('r', function(d) {
+                    return d['weight'] / 10;
+                })
+                .attr('fill', 'red')
+        })
                             
                 simulation.nodes(datapoints)
                 .on('tick', ticked)
