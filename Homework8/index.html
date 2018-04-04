@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <button id="2004">2004</button>
+    <button id="2017">2017</button>
     <button id="combine">Combine</button>
     <div id="chart"></div>
 
@@ -43,7 +43,7 @@
             
             var simulation = d3.forceSimulation()
             .force("x",d3.forceX(function(d){
-                width/2}).strength(0.05))
+                return width/2}).strength(0.05))
             .force("y",d3.forceY(height/2).strength(0.05))
             .force("collide",d3.forceCollide(function(d){
                 return radiusScale(d.records);
@@ -82,8 +82,9 @@
                         {node.filter(function (d) { return d.entity === 1; })
                         .style("visibility", "hidden");}});
                 
-                d3.select("#2004").on("click"), function(){
-                }
+                d3.select("#2017").on("click"), function(){
+                    console.log("You clicked me!")
+                })
             
                 simulation.nodes(datapoints)
                 .on('tick', ticked)
