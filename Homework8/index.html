@@ -82,7 +82,6 @@
                 .on("mouseout", function (d) {if (labels === 2) 
                 {node.filter(function (d) { return labels === 1; })
                 .style("visibility", "hidden");}});
-            }
                             
                 simulation.nodes(datapoints)
                 .on('tick', ticked)
