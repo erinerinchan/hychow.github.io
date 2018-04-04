@@ -155,6 +155,7 @@ h1 {
             d3.queue()
                 .defer(d3.csv, "data.csv")
                 .await(ready)
+            
             function ready(error, datapoints) {
                 var circles = svg.selectAll(".entity")
                     .data(datapoints)
