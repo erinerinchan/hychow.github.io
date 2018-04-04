@@ -58,6 +58,14 @@
                     })
                     .attr("fill", function(d) {
                                 return d.colour} )
+                    .style("visibility", function (d) {return labels === 1 ? "hidden" : "visible";})
+                    .on("mouseover", function (d) {if (labels === 2) 
+                        {node.filter(function (d) { return labels === 1; })
+                        .style("visibility", "visible");}})
+                    .on("mouseout", function (d) {if (labels === 2) 
+                        {node.filter(function (d) { return labels === 1; })
+                        .style("visibility", "hidden");}});
+                
                 
             var labels = svg.selectAll(".label")
                     .data(datapoints)
@@ -70,13 +78,7 @@
                     .text(function(d) {
                     return d.entity;
                     })
-                    .style("visibility", function (d) {return d.entity === 1 ? "hidden" : "visible";})
-                    .on("mouseover", function (d) {if (d.entity === 2) 
-                        {node.filter(function (d) { return d.entity === 1; })
-                        .style("visibility", "visible");}})
-                    .on("mouseout", function (d) {if (d.entity === 2) 
-                        {node.filter(function (d) { return d.entity === 1; })
-                        .style("visibility", "hidden");}});
+
             
                 simulation.nodes(datapoints)
                 .on('tick', ticked)
