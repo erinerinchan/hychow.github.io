@@ -70,19 +70,6 @@
                     .text(function(d) {
                     return d.entity;
                     })
-
-
-    svg
-        .selectAll('labels')
-        .on('mouseover', function() {
-            d3.select(this)
-                .style('visibility', 'visibile')
-        .on('mouseout', function() {
-            d3.select(this)
-                .style('visibility', 'hidden')
-                            
-                simulation.nodes(datapoints)
-                .on('tick', ticked)
                 
                 function ticked() {
                     circles
