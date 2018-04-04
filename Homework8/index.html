@@ -144,7 +144,7 @@ h1 {
             var radiusScale = d3.scaleSqrt().domain([1,1370000]).range([15,100])
             
             var forceX = d3.forceX(function(d){
-            if (d.years === '14'){
+            if (d.records === '4000'){
             return 200}else{
             return 800}
             }).strength(0.05)
