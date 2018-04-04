@@ -23,8 +23,6 @@
 </head>
 
 <body>
-    <button id="2017">2017</button>
-    <button id="combine">Combine</button>
     <div id="chart"></div>
 
     <script>
@@ -39,7 +37,7 @@
                 .append("g")
                 .attr("transform", "translate(0,0)")
             
-            var radiusScale = d3.scaleSqrt().domain([1,1370000]).range([10,80])
+            var radiusScale = d3.scaleSqrt().domain([1,1370000]).range([10,100])
             
             var simulation = d3.forceSimulation()
             .force("x",d3.forceX(width/2).strength(0.05))
@@ -47,7 +45,6 @@
             .force("collide",d3.forceCollide(function(d){
                 return radiusScale(d.records);
             }))
-            
             d3.queue()
                 .defer(d3.csv, "data.csv")
                 .await(ready)
@@ -80,10 +77,6 @@
                     .on("mouseout", function (d) {if (d.entity === 2) 
                         {node.filter(function (d) { return d.entity === 1; })
                         .style("visibility", "hidden");}});
-                
-                d3.select("#2017").on("click"), function(){
-                    console.log("You clicked me!")
-                }
             
                 simulation.nodes(datapoints)
                 .on('tick', ticked)
