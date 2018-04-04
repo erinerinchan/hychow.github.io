@@ -27,7 +27,7 @@
 
     <script>
         (function() {
-            var width = 1500,
+            var width = 1000,
                 height = 1000;
             
             var svg = d3.select("#chart")
@@ -37,7 +37,7 @@
                 .append("g")
                 .attr("transform", "translate(0,0)")
             
-            var radiusScale = d3.scaleSqrt().domain([1,1370000]).range([10,400])
+            var radiusScale = d3.scaleSqrt().domain([1,1370000]).range([10,200])
             
             var simulation = d3.forceSimulation()
             .force("x",d3.forceX(width/2).strength(0.05))
