@@ -143,8 +143,21 @@ h1 {
             
             var radiusScale = d3.scaleSqrt().domain([1,1370000]).range([15,100])
             
+            d3.queue()
+                .defer(d3.csv, "data.csv")
+                .await(ready)
+            function ready(error, datapoints) {
+                var circles = svg.selectAll(".entity")
+                    .data(datapoints)
+                    .enter().append("circle")
+                    .attr("class", "entity")
+                    .attr("r", function(d){
+                        return radiusScale(d.records)})
+                    .attr("fill", function(d) {
+                                return d.colour});
+                        
             var forceX = d3.forceX(function(d){
-                if(d.years === "14"){
+                if(d.years === "13"){
                     return 500}else{return 300}
             }).strength(0.1)
             
@@ -160,21 +173,7 @@ h1 {
             var simulation = d3.forceSimulation()
             .force("x",d3.forceX)
             .force("y",d3.forceY)
-            .force("collide",forceCollide)
-            
-            d3.queue()
-                .defer(d3.csv, "data.csv")
-                .await(ready)
-            function ready(error, datapoints) {
-                var circles = svg.selectAll(".entity")
-                    .data(datapoints)
-                    .enter().append("circle")
-                    .attr("class", "entity")
-                    .attr("r", function(d){
-                        return radiusScale(d.records)})
-                    .attr("fill", function(d) {
-                                return d.colour});
-                
+            .force("collide",forceCollide)    
                 
             var labels = svg.selectAll(".label")
                     .data(datapoints)
