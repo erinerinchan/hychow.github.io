@@ -56,6 +56,13 @@
                     .attr("r", function(d){
                         return radiusScale(d.records);
                     })
+                    .on("mouseover", function(){
+                        d3.select(this)
+                        .attr("r",function(d){
+                        return radiusScale(d.records) + 10})
+                    .on("mouseout", function(){
+                         d3.select(this)
+                         .attr("r",function(d){return radiusScale(d.records)})
                     .attr("fill", function(d) {
                                 return d.colour} );
                 
