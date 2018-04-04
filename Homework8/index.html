@@ -36,6 +36,9 @@
                 .attr("width", width)
                 .append("g")
                 .attr("transform", "translate(0,0)")
+            
+            var simulation = d3.forceSimulation()
+            
 
             d3.queue()
                 .defer(d3.csv, "data.csv")
@@ -49,6 +52,20 @@
                     .attr("class", "entity")
                     .attr("r", 10)
                     .attr("fill", "lightblue")
+
+                simulation.nodes(datapoints)
+                .on('ticks', ticked)
+                
+                function ticked() {
+                    circles
+                    .attr("cx", function(d){
+                        return d.x
+                    })
+                    .attr("cy", function(d){
+                        return d.y
+                    })
+                }
+             
             }
 
         })();
