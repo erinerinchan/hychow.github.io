@@ -1,4 +1,4 @@
-Entity,Years,Records lost,Organisation,Method of Leak
+Entity,Years,Records,Organisation,Method
 178.com,7,"10,000",web,hacked
 Aadhaar,14,"1,000,000",government,accidentally published
 Accendo Insurance Co,7,175,healthcare,poor security
