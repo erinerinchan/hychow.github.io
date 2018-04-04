@@ -60,6 +60,17 @@
                         return radiusScale(d.records);
                     })
                     .attr("fill", "lightblue")
+                
+            var labels = svg.selectAll(".label")
+                    .data(datapoints)
+                    .enter().append("text")
+                    .attr("class", "label")
+                    .attr("text-anchor", "middle")
+                    .attr("fill", "black")
+                    .attr("font-size", "12px")
+                    .text(function(d) {
+                    return d.entity;
+                     })
 
                 simulation.nodes(datapoints)
                 .on('tick', ticked)
