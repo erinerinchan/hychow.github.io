@@ -57,14 +57,7 @@
                         return radiusScale(d.records);
                     })
                     .attr("fill", function(d) {
-                                return d.colour} )
-                    .style("visibility", function (d) {return labels === 1 ? "hidden" : "visible";})
-                    .on("mouseover", function (d) {if (labels === 2) 
-                        {node.filter(function (d) { return labels === 1; })
-                        .style("visibility", "visible");}})
-                    .on("mouseout", function (d) {if (labels === 2) 
-                        {node.filter(function (d) { return labels === 1; })
-                        .style("visibility", "hidden");}});
+                                return d.colour} );
                 
                 
             var labels = svg.selectAll(".label")
