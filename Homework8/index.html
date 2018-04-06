@@ -98,10 +98,10 @@ h1 {
   width: 250px;
   height: 300px;
   padding: 2px;
-  font: 12px sans-serif;
-  background: lightsteelblue;
+  font: 20px;
+  background: #333;
   border: 0px;
-  border-radius: 8px;
+  border-radius: 2px;
   pointer-events: none;
 }
 
@@ -199,8 +199,7 @@ h1 {
                          div.transition()
                             .duration(200)
                             .style("opacity", .9)
-                            .style("left", (d3.event.pageX) + "px")
-                            .style("top", (d3.event.pageY - 28) + "px")
+                            .style("left", "80%")
                          div.html(d.years + "<br/>" + d.records)
                             .style("left", "80%")});
 
