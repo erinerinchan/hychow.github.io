@@ -98,7 +98,6 @@ h1 {
   width: 250px;
   height: 300px;
   padding: 2px;
-  left: 80%
   font: 12px sans-serif;
   background: lightsteelblue;
   border: 0px;
@@ -199,7 +198,9 @@ h1 {
                     .on("click", function(d) {
                          div.transition()
                             .duration(200)
-                            .style("opacity", .9);
+                            .style("opacity", .9)
+                            .style("left", (d3.event.pageX) + "px")
+                            .style("top", (d3.event.pageY - 28) + "px")
                          div.html(d.years + "<br/>" + d.records)
                             .style("left", "80%")});
 
