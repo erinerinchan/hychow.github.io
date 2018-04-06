@@ -196,15 +196,15 @@ h1 {
                     .text(function(d) {
                     return d.entity;})
                     .on("mouseover", function(d) {
-                        div.transition()
-                        .duration(200)
-                        .style("opacity", .9);
-                        div.html(d.years + "<br/>" + d.records)
-                    .style("left", "80%")
+                         div.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                         div.html(d.years + "<br/>" + d.records)
+                            .style("left", "80%")})
                    .on("mouseout", function(d) {
                         div.transition()
-                        .duration(500)
-                        .style("opacity", 0);
+                            .duration(500)
+                            .style("opacity", 0);
                          });
 
                                     
