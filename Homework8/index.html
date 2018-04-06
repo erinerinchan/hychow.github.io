@@ -220,7 +220,28 @@
             border: 0px;
             border-radius: 2px;
             pointer-events: none;
-        }
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+            @-webkit-keyframes fadein {
+                from {bottom: 0; opacity: 0;} 
+                to {bottom: 30px; opacity: 1;}
+            }
+
+            @keyframes fadein {
+                from {bottom: 0; opacity: 0;}
+                to {bottom: 30px; opacity: 1;}
+            }
+
+            @-webkit-keyframes fadeout {
+                from {bottom: 30px; opacity: 1;} 
+                to {bottom: 0; opacity: 0;}
+            }
+
+            @keyframes fadeout {
+                from {bottom: 30px; opacity: 1;}
+                to {bottom: 0; opacity: 0;}
+            }        
     </style>
 
 </head>
@@ -278,9 +299,9 @@
                </center>
         </div>
         <div class='col-md-6'>
-            <p>| Hover around the bubble to get the name of the company invovled.</p>
+            <p>| Hover around the bubble to get the name of the entity invovled.</p>
             <p>| Click the name to see more details of the incident.</p>
-            <p>| "Decade Split" can push pre-2010 and post-2010 to R and L respectively.</p>
+            <p>| "Decade Split" can push pre and post-2010 to R and L respectively.</p>
         </div>
         </div>
         <div class='row'>
@@ -348,10 +369,11 @@
                                         .attr("fill", "hsla(0, 9%, 98%, 0)")
                                 })
                                 .on("click", function(d) {
-                                    div.transition()
-                                        .duration(200)
-                                        .style("opacity", .9)
-                                    div.html("| " + "Year" + ": " + d.years + "<br/>" +
+                                    div.className = "show";
+                                    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+                                    div.html(
+                                            "| " + "Entity" + ": " + d.entity + "<br/>" +
+                                            "| " + "Year" + ": " + d.years + "<br/>" +
                                             "| " + "Records Stolen" + ": " + d.records + "k" + "</br>" +
                                             "| " + "Details" + ": " + "</br>" + d.details)
                                         .style("left", (d3.event.pageX) + "px")
