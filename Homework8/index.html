@@ -294,8 +294,8 @@
                     <div id="chart"></div> </center>
                 <script>
                     (function() {
-                        var width = 1000,
-                            height = 1000;
+                        var width = 1500,
+                            height = 3000;
 
                         var svg = d3.select("#chart")
                             .append("svg")
@@ -310,13 +310,28 @@
                             if(d.years === '2017'){
                                 return 200} 
                             if(d.years === '2016'){
-                                return 500}
+                                return 600}
+                            if(d.years === '2015'){
+                                return 200}
+                            if(d.years === '2014'){
+                                return 600}
+                        }).strength(0.05)
+                        
+                        var forceY = d3.forceY(function(d){
+                            if(d.years === '2017'){
+                                return 200} 
+                            if(d.years === '2016'){
+                                return 600}
+                            if(d.years === '2015'){
+                                return 200}
+                            if(d.years === '2014'){
+                                return 600}
                         }).strength(0.05)
 
 
                         var simulation = d3.forceSimulation()
                             .force("x", forceX)
-                            .force("y", d3.forceY(height / 2).strength(0.05))
+                            .force("y", forceY)
                             .force("collide", d3.forceCollide(function(d) {
                                 return radiusScale(d.records);
                             }))
