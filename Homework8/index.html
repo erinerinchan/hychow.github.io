@@ -254,11 +254,15 @@ h1 {
                          .attr("fill","hsla(0, 9%, 98%, 0)")})
                     .on("click", function(){
                             var x = document.getElementById("snackbar")
+                            .data(datapoints)
+                            .enter().append("text")
+                            .attr("class", "label")
+                            .attr("text-anchor","middle")
+                            .attr("fill", "white")
+                            .attr("font-size", "20px")
+                            .text(function(d) {return d.years;})
                             x.className = "show";
-                            setTimeout(function() {
-                                x.className = x.className.replace("show", "")
-                            }, 3000)
-                            x.html(d.year + "<br/>" + d.records + "<br/>" + d.details)
+                            setTimeout(function() {x.className = x.className.replace("show", "")}, 3000)
                             })
           
                                     
