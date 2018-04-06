@@ -96,7 +96,7 @@ h1 {
   position: absolute;
   text-align: left;
   width: 250px;
-  height: 300px;
+  height: 320px;
   padding: 16px;
   font: 15px "Quicksand";
   background: lightsteelblue;
@@ -139,8 +139,114 @@ h1 {
     <br>
             <h3>| World's Biggest Data Breach</h3>
     <br>
-    <div id="chart"></div>
+        <div id="chartlastest"></div>
+        <script>
+        (function() {
+            var width = 1000,
+                height = 1000;
+            
+            var svg = d3.select("#chartlatest")
+                .append("svg")
+                .attr("height", height)
+                .attr("width", width)
+                .append("g")
+                .attr("transform", "translate(0,0)")
+            
+            var radiusScale = d3.scaleSqrt().domain([1,1370000]).range([15,100])
+            
+            
+            var simulation = d3.forceSimulation()
+            .force("x",d3.forceX(width/15).strength(0.05))
+            .force("y",d3.forceY(height/15).strength(0.05))
+            .force("collide",d3.forceCollide(function(d){
+                return radiusScale(d.records);
+            }))
+            
+            d3.queue()
+                .defer(d3.csv, "datalatest.csv")
+                .await(ready)
+            function ready(error, datapoints) {
+                var circles = svg.selectAll(".entity")
+                    .data(datapoints)
+                    .enter().append("circle")
+                    .attr("class", "entity")
+                    .attr("r", function(d){
+                        return radiusScale(d.records)})
+                    .attr("fill", function(d) {
+                                return d.colour});
+                
+            var div = d3.select("body").append("div")
+                    .attr("class", "tooltip")
+                    .style("opacity", 0);
+                
+            var labels = svg.selectAll(".label")
+                    .data(datapoints)
+                    .enter().append("text")
+                    .attr("class", "label")
+                    .attr("text-anchor","middle")
+                    .attr("fill", "hsla(0, 9%, 98%, 0)")
+                    .attr("font-size", "20px")
+                    .text(function(d) {
+                    return d.entity;})
+                    .on("mouseover", function() {
+                     d3.select(this)
+                        .attr("fill", "black")})
+                    .on("mouseout", function() {
+                     d3.select(this)
+                        .attr("fill", "hsla(0, 9%, 98%, 0)")})
+                    .on("click", function(d) {
+                         div.transition()
+                            .duration(200)
+                            .style("opacity", .9)
+                        div.html("| "+ "Year"+ ": " + d.years + "<br/>" + 
+                                 "| "+ "Records Stolen"+ ": " + d.records + "k"+ "</br>"+
+                                 "| "+ "Details" + ": " + "</br>"+ d.details)
+                            .style("left",(d3.event.pageX) + "px")
+                            .style("top", (d3.event.pageY - 35) + "px")})
+                         
 
+                                    
+                simulation.nodes(datapoints)
+                .on('tick', ticked)
+                
+                function ticked() {
+                    circles
+                    .attr("cx", function(d){
+                        return d.x
+                    })
+                    .attr("cy", function(d){
+                        return d.y
+                    })
+                    labels
+                    .attr("x", function(d) {
+                        return d.x
+                    })
+                    .attr("y", function(d) {
+                       return d.y
+                    })
+                }
+             
+            }
+        })();
+        
+    </script>
+        /*
+        <div id="chart17"></div>
+        <div id="chart16"></div>
+        <div id="chart15"></div>
+        <div id="chart14"></div>
+        <div id="chart13"></div>
+        <div id="chart12"></div>
+        <div id="chart11"></div>
+        <div id="chart10"></div>
+        <div id="chart9"></div>
+        <div id="chart8"></div>
+        <div id="chart7"></div>
+        <div id="chart6"></div>
+        <div id="chart5"></div>
+        <div id="chart4"></div>
+        
+        <div id="chart"></div>
     <script>
         (function() {
             var width = 1000,
@@ -230,7 +336,7 @@ h1 {
             }
         })();
         
-    </script>
+    </script> */
         </div>
     </div>
     </div>
