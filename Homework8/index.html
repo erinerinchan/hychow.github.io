@@ -141,11 +141,6 @@ h1 {
             <h3>| World's Biggest Data Breach (in thousand)</h3>
     <br>
     <div id="chart"></div>
-    <div id="snackbar">
-        <p id="years"></p>
-        <p id="records"></p>
-        <p id="details"></p>
-        </div>
 
     <script>
         (function() {
@@ -195,17 +190,18 @@ h1 {
                     .attr("font-size", "20px")
                     .text(function(d) {
                     return d.entity;})
-                    .on("mouseover", function(d) {
+                    .on("mouseover", function() {
+                     d3.select(this)
+                        .attr("fill", "black")})
+                    .on("mouseout", function() {
+                     d3.select(this)
+                        .attr("fill", "hsla(0, 9%, 98%, 0)")})
+                    .on("click", function(d) {
                          div.transition()
                             .duration(200)
                             .style("opacity", .9);
                          div.html(d.years + "<br/>" + d.records)
-                            .style("left", "80%")})
-                   .on("mouseout", function(d) {
-                        div.transition()
-                            .duration(500)
-                            .style("opacity", 0);
-                         });
+                            .style("left", "80%")});
 
                                     
                 simulation.nodes(datapoints)
