@@ -308,7 +308,9 @@
                         
                         var forceX = d3.forceX(function(d){
                             if(d.years === '2017'){
-                                return 200} else { return 800}
+                                return 200} 
+                            if(d.years === '2016'){
+                                return 500}
                         }).strength(0.05)
 
 
