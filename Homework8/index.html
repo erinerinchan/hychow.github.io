@@ -179,13 +179,6 @@ h1 {
                     .on("mouseout", function(){
                          d3.select(this)
                          .attr("fill","hsla(0, 9%, 98%, 0)")})
-                    .on("click", function(){
-                        d3.select(this)
-                        .text(function(d) {
-                     return d.records;})})
-                    .on("dbclick", function(){
-                        d3.select(this)
-                        .text(function(d){return d.entity;})})
             
                 simulation.nodes(datapoints)
                 .on('tick', ticked)
