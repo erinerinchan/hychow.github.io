@@ -301,12 +301,8 @@
                             .attr("transform", "translate(0,0)")
                         var radiusScale = d3.scaleSqrt().domain([1, 1370000]).range([15, 100])
                         
-                        var forceX = d3.forceX(function(d){
-                            if(d.years < 2010){
-                                return 200} else { return 900}
-                        }).strength(0.05)
                         var simulation = d3.forceSimulation()
-                            .force("x", forceX)
+                            .force("x", d3.forceX(width / 2).strength(0.05))
                             .force("y", d3.forceY(height / 2).strength(0.05))
                             .force("collide", d3.forceCollide(function(d) {
                                 return radiusScale(d.records);
@@ -358,9 +354,13 @@
                                         .style("top", (d3.event.pageY - 35) + "px")
                                 })
                             
+                                                    
                             d3.select("#decade").on("click", function(){
                                 simulation
-                                    .force("x", forceX)
+                                    .force("x", d3.forceX(function(d){
+                                                if(d.years < 2010){
+                                                    return 200} else { return 900}
+                                                }).strength(0.05))
                                     .alphaTarget(0.03)
                                     .restart() 
                                 })
