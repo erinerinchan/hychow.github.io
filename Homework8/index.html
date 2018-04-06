@@ -254,6 +254,8 @@ h1 {
                          .attr("fill","hsla(0, 9%, 98%, 0)")})
                     .on("click", function(){
                             var x = document.getElementById("snackbar")
+                            x.className = "show";
+                            setTimeout(function() {x.className = x.className.replace("show", "")}, 3000)
                             .data(datapoints)
                             .enter().append("text")
                             .attr("class", "label")
@@ -261,8 +263,6 @@ h1 {
                             .attr("fill", "white")
                             .attr("font-size", "20px")
                             .text(function(d) {return d.years;})
-                            x.className = "show";
-                            setTimeout(function() {x.className = x.className.replace("show", "")}, 3000)
                             })
           
                                     
