@@ -308,8 +308,8 @@
                         
                         var forceX = d3.forceX(function(d){
                             if(d.years === '2017'){
-                                return (width / 2) + 30} 
-                            else{ return (width / 2) - 30}
+                                return 200} 
+                            else{ return 800}
                         }).strength(0.05)
                         
                         var simulation = d3.forceSimulation()
