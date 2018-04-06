@@ -92,6 +92,9 @@ h1 {
         background-repeat: repeat;
         }
         
+     #snackbarText{
+        }
+        
      #snackbar {
         visibility: hidden;
         min-width: 350px;
@@ -195,10 +198,7 @@ h1 {
             <h3>| World's Biggest Data Breach (in thousand)</h3>
     <br>
     <div id="chart"></div>
-    <div id="snackbar">
-        <p>Year:</p>
-        <p>Stolen Records:</p>
-        <p>Details:</p>
+    <div id="snackbar" >
         </div>
 
     <script>
@@ -256,16 +256,10 @@ h1 {
                             var x = document.getElementById("snackbar")
                             x.className = "show";
                             setTimeout(function() {
-                                x.className = x.className.replace("show", "");
-                            }, 3000);
-                        
-                            var y = document.getElementById("snackbar")
-                            y.select("text").text("Year"+ d.entity)
-                            y.append("text")
-                                .style("font-size","20px")
-                                .attr("fill", "white")
-                                .attr("font-family", "Quicksand")
-                        })
+                                x.className = x.className.replace("show", "")
+                            }, 3000)
+                            x.html(d.year + "<br/>" + d.records + "<br/>" + d.details)
+                            })
           
                                     
                 simulation.nodes(datapoints)
