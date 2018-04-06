@@ -309,21 +309,12 @@
                         var forceX = d3.forceX(function(d){
                             if(d.years === '2017'){
                                 return (width / 2) + 30} 
-                            if(d.years === '2016'){
-                                return (width / 2) - 30}
+                            else{ return (width / 2) - 30}
                         }).strength(0.05)
                         
-                        var forceY = d3.forceY(function(d){
-                            if(d.years === '2017'){
-                                return height/15 } 
-                            if(d.years === '2016'){
-                                return height/15}
-                        }).strength(0.05)
-
-
                         var simulation = d3.forceSimulation()
                             .force("x", forceX)
-                            .force("y", forceY)
+                            .force("y", forceY(height / 2).strength(0.05))
                             .force("collide", d3.forceCollide(function(d) {
                                 return radiusScale(d.records);
                             }))
