@@ -370,7 +370,7 @@
                                 })
                                 .on("click", function(d) {
                                     div.className = "show";
-                                    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+                                    setTimeout(function(){ div.className = div.className.replace("show", ""); }, 3000);
                                     div.html(
                                             "| " + "Entity" + ": " + d.entity + "<br/>" +
                                             "| " + "Year" + ": " + d.years + "<br/>" +
