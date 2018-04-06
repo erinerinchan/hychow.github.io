@@ -137,7 +137,7 @@ h1 {
     <div class='row'>
     <div class='col-md-10'>
     <br>
-            <h3>| World's Biggest Data Breach (in thousand)</h3>
+            <h3>| World's Biggest Data Breach</h3>
     <br>
     <div id="chart"></div>
 
@@ -200,8 +200,8 @@ h1 {
                             .duration(200)
                             .style("opacity", .9)
                         div.html("| "+ "Year"+ ": " + d.years + "<br/>" + 
-                                 "| "+ "Records Stolen"+ ": " + d.records + "</br>"+
-                                 "| "+ "Details" + ": " + d.details)
+                                 "| "+ "Records Stolen"+ ": " + d.records + "k"+ "</br>"+
+                                 "| "+ "Details" + ": " + "</br>"+ d.details)
                             .style("left",(d3.event.pageX) + "px")
                             .style("top", (d3.event.pageY - 35) + "px")})
                          
