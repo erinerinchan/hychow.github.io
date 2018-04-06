@@ -210,7 +210,7 @@
         }
         
         div.tooltip {
-            position: absolute;
+            position: static;
             text-align: left;
             width: 250px;
             height: 320px;
@@ -220,28 +220,7 @@
             border: 0px;
             border-radius: 2px;
             pointer-events: none;
-            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-            animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-            @-webkit-keyframes fadein {
-                from {bottom: 0; opacity: 0;} 
-                to {bottom: 30px; opacity: 1;}
-            }
-
-            @keyframes fadein {
-                from {bottom: 0; opacity: 0;}
-                to {bottom: 30px; opacity: 1;}
-            }
-
-            @-webkit-keyframes fadeout {
-                from {bottom: 30px; opacity: 1;} 
-                to {bottom: 0; opacity: 0;}
-            }
-
-            @keyframes fadeout {
-                from {bottom: 30px; opacity: 1;}
-                to {bottom: 0; opacity: 0;}
-            }        
+}  
     </style>
 
 </head>
@@ -369,15 +348,16 @@
                                         .attr("fill", "hsla(0, 9%, 98%, 0)")
                                 })
                                 .on("click", function(d) {
-                                    div.className = "show";
-                                    setTimeout(function(){ div.className = div.className.replace("show", ""); }, 3000);
+                                    div.transition()
+                                        .duration(200)
+                                        .style("opacity", .9)
                                     div.html(
                                             "| " + "Entity" + ": " + d.entity + "<br/>" +
                                             "| " + "Year" + ": " + d.years + "<br/>" +
                                             "| " + "Records Stolen" + ": " + d.records + "k" + "</br>" +
                                             "| " + "Details" + ": " + "</br>" + d.details)
-                                        .style("left", (d3.event.pageX) + "px")
-                                        .style("top", (d3.event.pageY - 35) + "px")
+                                        .style("left", "100px")
+                                        .style("top", "800px")
                                 })
                             
                                                     
