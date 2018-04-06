@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
-    
-<!-- Latest compiled and minified CSS -->
+
+    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Optional theme -->
@@ -16,101 +16,101 @@
 
     <title>World's Biggest Data Breaches</title>
     <style>
- * {
-     font-size: 20px;
-     font-family: "Quicksand";
- }
-  
-p,
-text {
-        font-size: 20px;
- }
+        * {
+            font-size: 20px;
+            font-family: "Quicksand";
+        }
         
-h1 {
-        font-family: 'Quicksand';
-        font-size: 40px;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: 600;
-        line-height: 50px;
-        color: white;
-    }
-    
-    h3 {
-        font-family: 'Quicksand';
-        font-size: 30px;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: 200;
-        line-height: 15.4px;
-        color: rgba(54, 54, 54, 0.863);
-    }
-    
-    h4 {
-        font-family: 'Quicksand';
-        font-size: 25px;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: 500;
-        line-height: 26.4px;
-        color: white;
-    }
-    
-    p {
-        font-family: 'Quicksand';
-        font-size: 18px;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: 200;
-        line-height: 20px;
-        color: dimgrey;
-    }
-    
-    h5 {
-        font-family: 'Quicksand';
-        font-size: 10px;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: 200;
-        line-height: 15px;
-    }
+        p,
+        text {
+            font-size: 20px;
+        }
         
-    svg {
+        h1 {
+            font-family: 'Quicksand';
+            font-size: 40px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 600;
+            line-height: 50px;
+            color: white;
+        }
+        
+        h3 {
+            font-family: 'Quicksand';
+            font-size: 30px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 200;
+            line-height: 15.4px;
+            color: rgba(54, 54, 54, 0.863);
+        }
+        
+        h4 {
+            font-family: 'Quicksand';
+            font-size: 25px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 500;
+            line-height: 26.4px;
+            color: white;
+        }
+        
+        p {
+            font-family: 'Quicksand';
+            font-size: 18px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 200;
+            line-height: 20px;
+            color: dimgrey;
+        }
+        
+        h5 {
+            font-family: 'Quicksand';
+            font-size: 10px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 200;
+            line-height: 15px;
+        }
+        
+        svg {
             background: #ffffff;
         }
-    
-    #container{
-        padding:  10px}
         
-    #header {
-        background-color:  rgba(114, 113, 113, 0.445);
-        padding: 20px;
-        }
-    
-    body {
-        background-color: hsla(0, 9%, 98%, 0);
-        background-repeat: repeat;
+        #container {
+            padding: 10px
         }
         
-  div.tooltip {
-  position: absolute;
-  text-align: left;
-  width: 250px;
-  height: 320px;
-  padding: 16px;
-  font: 15px "Quicksand";
-  background: lightsteelblue;
-  border: 0px;
-  border-radius: 2px;
-  pointer-events: none;
-}
-
+        #header {
+            background-color: rgba(114, 113, 113, 0.445);
+            padding: 20px;
+        }
+        
+        body {
+            background-color: hsla(0, 9%, 98%, 0);
+            background-repeat: repeat;
+        }
+        
+        div.tooltip {
+            position: absolute;
+            text-align: left;
+            width: 250px;
+            height: 320px;
+            padding: 16px;
+            font: 15px "Quicksand";
+            background: lightsteelblue;
+            border: 0px;
+            border-radius: 2px;
+            pointer-events: none;
+        }
     </style>
 
 </head>
 
 <body>
-        <div id="header">
+    <div id="header">
         <center>
             <div class='row'>
                 <div class='col-md-5'>
@@ -123,223 +123,123 @@ h1 {
                     <h4 class="animated fadeInDown" align='left'>| Selected losses greater than 30,000 records</h4>
                     <h4 class="animated fadeInDown" align='left'>(updated 3rd Apr 2018)</h4>
                     <br>
-                        <br>
-                        <p class="animated fadeInDown" align='left'>Facebook's data breach scandal, which invovled 50 million users, shakes the world.
-                        </p>
-                        <p class="animated fadeInDown" align='left'>But is data breach an unprecedented news to us? Let's take a look.
-                        </p>
-                        <p>&nbsp;</p>
+                    <br>
+                    <p class="animated fadeInDown" align='left'>Facebook's data breach scandal, which invovled 50 million users, shakes the world.
+                    </p>
+                    <p class="animated fadeInDown" align='left'>But is data breach an unprecedented news to us? Let's take a look.
+                    </p>
+                    <p>&nbsp;</p>
                 </div>
             </div>
         </center>
     </div>
     <div id="container">
-    <div class='row'>
-    <div class='col-md-10'>
-    <br>
-            <h3>| World's Biggest Data Breach</h3>
-    <br>
-        <div id="chartlastest"></div>
-        <script>
-        (function() {
-            var width = 1000,
-                height = 1000;
-            
-            var svg = d3.select("#chartlastest")
-                .append("svg")
-                .attr("height", height)
-                .attr("width", width)
-                .append("g")
-                .attr("transform", "translate(0,0)")
-            
-            var radiusScale = d3.scaleSqrt().domain([81,1000000]).range([15,100])
-            
-            
-            var simulation = d3.forceSimulation()
-            .force("x",d3.forceX(width/15).strength(0.05))
-            .force("y",d3.forceY(height/15).strength(0.05))
-            .force("collide",d3.forceCollide(function(d){
-                return radiusScale(d.records);
-            }))
-            
-            d3.queue()
-                .defer(d3.csv, "datalastest.csv")
-                .await(ready)
-            function ready(error, datapoints) {
-                var circles = svg.selectAll(".entity")
-                    .data(datapoints)
-                    .enter().append("circle")
-                    .attr("class", "entity")
-                    .attr("r", function(d){
-                        return radiusScale(d.records)})
-                    .attr("fill", function(d) {
-                                return d.colour});
-                
-            var div = d3.select("body").append("div")
-                    .attr("class", "tooltip")
-                    .style("opacity", 0);
-                
-            var labels = svg.selectAll(".label")
-                    .data(datapoints)
-                    .enter().append("text")
-                    .attr("class", "label")
-                    .attr("text-anchor","middle")
-                    .attr("fill", "hsla(0, 9%, 98%, 0)")
-                    .attr("font-size", "20px")
-                    .text(function(d) {
-                    return d.entity;})
-                    .on("mouseover", function() {
-                     d3.select(this)
-                        .attr("fill", "black")})
-                    .on("mouseout", function() {
-                     d3.select(this)
-                        .attr("fill", "hsla(0, 9%, 98%, 0)")})
-                    .on("click", function(d) {
-                         div.transition()
-                            .duration(200)
-                            .style("opacity", .9)
-                        div.html("| "+ "Year"+ ": " + d.years + "<br/>" + 
-                                 "| "+ "Records Stolen"+ ": " + d.records + "k"+ "</br>"+
-                                 "| "+ "Details" + ": " + "</br>"+ d.details)
-                            .style("left",(d3.event.pageX) + "px")
-                            .style("top", (d3.event.pageY - 35) + "px")})
-                         
+        <div class='row'>
+            <div class='col-md-10'>
+                <br>
+                <h3>| World's Biggest Data Breach</h3>
+                <br>
+                <div id="chart"></div>
 
-                                    
-                simulation.nodes(datapoints)
-                .on('tick', ticked)
-                
-                function ticked() {
-                    circles
-                    .attr("cx", function(d){
-                        return d.x
-                    })
-                    .attr("cy", function(d){
-                        return d.y
-                    })
-                    labels
-                    .attr("x", function(d) {
-                        return d.x
-                    })
-                    .attr("y", function(d) {
-                       return d.y
-                    })
-                }
-             
-            }
-        })();
-        
-    </script>
-        
-        <div id="chart17"></div>
-        <div id="chart16"></div>
-        <div id="chart15"></div>
-        <div id="chart14"></div>
-        <div id="chart13"></div>
-        <div id="chart12"></div>
-        <div id="chart11"></div>
-        <div id="chart10"></div>
-        <div id="chart9"></div>
-        <div id="chart8"></div>
-        <div id="chart7"></div>
-        <div id="chart6"></div>
-        <div id="chart5"></div>
-        <div id="chart4"></div>
-        
-        <div id="chart"></div>
-    <script>
-        /*
-        (function() {
-            var width = 1000,
-                height = 1000;
-            
-            var svg = d3.select("#chart")
-                .append("svg")
-                .attr("height", height)
-                .attr("width", width)
-                .append("g")
-                .attr("transform", "translate(0,0)")
-            
-            var radiusScale = d3.scaleSqrt().domain([1,1370000]).range([15,100])
-            
-            
-            var simulation = d3.forceSimulation()
-            .force("x",d3.forceX(width/2).strength(0.05))
-            .force("y",d3.forceY(height/2).strength(0.05))
-            .force("collide",d3.forceCollide(function(d){
-                return radiusScale(d.records);
-            }))
-            
-            d3.queue()
-                .defer(d3.csv, "data1.csv")
-                .await(ready)
-            function ready(error, datapoints) {
-                var circles = svg.selectAll(".entity")
-                    .data(datapoints)
-                    .enter().append("circle")
-                    .attr("class", "entity")
-                    .attr("r", function(d){
-                        return radiusScale(d.records)})
-                    .attr("fill", function(d) {
-                                return d.colour});
-                
-            var div = d3.select("body").append("div")
-                    .attr("class", "tooltip")
-                    .style("opacity", 0);
-                
-            var labels = svg.selectAll(".label")
-                    .data(datapoints)
-                    .enter().append("text")
-                    .attr("class", "label")
-                    .attr("text-anchor","middle")
-                    .attr("fill", "hsla(0, 9%, 98%, 0)")
-                    .attr("font-size", "20px")
-                    .text(function(d) {
-                    return d.entity;})
-                    .on("mouseover", function() {
-                     d3.select(this)
-                        .attr("fill", "black")})
-                    .on("mouseout", function() {
-                     d3.select(this)
-                        .attr("fill", "hsla(0, 9%, 98%, 0)")})
-                    .on("click", function(d) {
-                         div.transition()
-                            .duration(200)
-                            .style("opacity", .9)
-                        div.html("| "+ "Year"+ ": " + d.years + "<br/>" + 
-                                 "| "+ "Records Stolen"+ ": " + d.records + "k"+ "</br>"+
-                                 "| "+ "Details" + ": " + "</br>"+ d.details)
-                            .style("left",(d3.event.pageX) + "px")
-                            .style("top", (d3.event.pageY - 35) + "px")})
-                         
+                <script>
+                    (function() {
+                        var width = 1000,
+                            height = 1000;
 
-                                    
-                simulation.nodes(datapoints)
-                .on('tick', ticked)
-                
-                function ticked() {
-                    circles
-                    .attr("cx", function(d){
-                        return d.x
-                    })
-                    .attr("cy", function(d){
-                        return d.y
-                    })
-                    labels
-                    .attr("x", function(d) {
-                        return d.x
-                    })
-                    .attr("y", function(d) {
-                       return d.y
-                    })
-                }
-             
-            }
-        })();
- */       
-    </script> 
+                        var svg = d3.select("#chart")
+                            .append("svg")
+                            .attr("height", height)
+                            .attr("width", width)
+                            .append("g")
+                            .attr("transform", "translate(0,0)")
+
+                        var radiusScale = d3.scaleSqrt().domain([1, 1370000]).range([15, 100])
+
+
+                        var simulation = d3.forceSimulation()
+                            .force("x", d3.forceX(width / 2).strength(0.05))
+                            .force("y", d3.forceY(height / 2).strength(0.05))
+                            .force("collide", d3.forceCollide(function(d) {
+                                return radiusScale(d.records);
+                            }))
+
+                        d3.queue()
+                            .defer(d3.csv, "data1.csv")
+                            .await(ready)
+
+                        function ready(error, datapoints) {
+                            var circles = svg.selectAll(".entity")
+                                .data(datapoints)
+                                .enter().append("circle")
+                                .attr("class", "entity")
+                                .attr("r", function(d) {
+                                    return radiusScale(d.records)
+                                })
+                                .attr("fill", function(d) {
+                                    return d.colour
+                                });
+
+                            var div = d3.select("body").append("div")
+                                .attr("class", "tooltip")
+                                .style("opacity", 0);
+                                
+
+                            var labels = svg.selectAll(".label")
+                                .data(datapoints)
+                                .enter().append("text")
+                                .attr("class", "label")
+                                .attr("text-anchor", "middle")
+                                .attr("fill", "hsla(0, 9%, 98%, 0)")
+                                .attr("font-size", "20px")
+                                .text(function(d) {
+                                    return d.entity;
+                                })
+                                .on("mouseover", function() {
+                                    d3.select(this)
+                                        .attr("fill", "black")
+                                })
+                                .on("mouseout", function() {
+                                    d3.select(this)
+                                        .attr("fill", "hsla(0, 9%, 98%, 0)")
+                                })
+                                .on("click", function(d) {
+                                    div.transition()
+                                        .duration(200)
+                                        .style("opacity", .9)
+                                    div.html("| " + "Year" + ": " + d.years + "<br/>" +
+                                            "| " + "Records Stolen" + ": " + d.records + "k" + "</br>" +
+                                            "| " + "Details" + ": " + "</br>" + d.details)
+                                        .style("left", (d3.event.pageX) + "px")
+                                        .style("top", (d3.event.pageY - 35) + "px")
+                                })
+
+
+
+                            simulation.nodes(datapoints)
+                                .on('tick', ticked)
+
+                            function ticked() {
+                                circles
+                                    .attr("cx", function(d) {
+                                        return d.x
+                                    })
+                                    .attr("cy", function(d) {
+                                        return d.y
+                                    })
+                                labels
+                                    .attr("x", function(d) {
+                                        return d.x
+                                    })
+                                    .attr("y", function(d) {
+                                        return d.y
+                                    })
+                            }
+
+                        }
+                    })();
+                </script>
+            </div>
         </div>
-    </div>
     </div>
 </body>
 
