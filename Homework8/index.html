@@ -285,6 +285,7 @@
         </div>
         <div class='row'>
             <div class='col-md-12'>
+                <br>
                 <button id="decade"> Decade split </button>
                 <button id="combine"> Combine </button>
                     <div id="chart"></div>
@@ -358,7 +359,18 @@
                                 })
                             
                             d3.select("#decade").on("click", function(){
-                                      console.log("You clicked me!")})
+                                simulation
+                                    .force("x", forceX)
+                                    .alphaTarget(0.25)
+                                    .restart() 
+                                })
+
+                            d3.select("#combine").on("click", function(){
+                                simulation
+                                    .force("x", d3.forceX(width/2).strength(0.05))
+                                    .alphaTarget(0.25)
+                                    .restart()
+                                 })                            
                             
                             simulation.nodes(datapoints)
                                 .on('tick', ticked)
