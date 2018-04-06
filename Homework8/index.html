@@ -92,76 +92,19 @@ h1 {
         background-repeat: repeat;
         }
         
-     #snackbarText{
-        }
-        
-     #snackbar {
-        visibility: hidden;
-        min-width: 350px;
-        margin-left: -125px;
-        background-color: #333;
-        color: #fff;
-        opacity: 0.8;
-        text-align: center;
-        border-radius: 2px;
-        padding: 16px;
-        position: fixed;
-        z-index: 1;
-        left: 80%;
-        bottom: 30px;
-        font-size: 17px;
-        font-family: 'Quicksand';
-    }
-    
-    #snackbar.show {
-        visibility: visible;
-        -webkit-animation: fadein 0.5s, fadeout 120s;
-        animation: fadein 0.5s, fadeout 120s;
-    }
-    
-    @-webkit-keyframes fadein {
-        from {
-            bottom: 0;
-            opacity: 0;
-        }
-        to {
-            bottom: 30px;
-            opacity: 0.8;
-        }
-    }
-    
-    @keyframes fadein {
-        from {
-            bottom: 0;
-            opacity: 0;
-        }
-        to {
-            bottom: 30px;
-            opacity: 0.8;
-        }
-    }
-    
-    @-webkit-keyframes fadeout {
-        from {
-            bottom: 30px;
-            opacity: 0.8;
-        }
-        to {
-            bottom: 0;
-            opacity: 0;
-        }
-    }
-    
-    @keyframes fadeout {
-        from {
-            bottom: 30px;
-            opacity: 0.8;
-        }
-        to {
-            bottom: 0;
-            opacity: 0;
-        }
-    }
+  div.tooltip {
+  position: fixed;
+  text-align: center;
+  width: 250px;
+  height: 300px;
+  padding: 2px;
+  left: 80%
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
 
     </style>
 
@@ -198,7 +141,10 @@ h1 {
             <h3>| World's Biggest Data Breach (in thousand)</h3>
     <br>
     <div id="chart"></div>
-    <div id="snackbar" onclick="myFunction()" >
+    <div id="snackbar">
+        <p id="years"></p>
+        <p id="records"></p>
+        <p id="details"></p>
         </div>
 
     <script>
@@ -236,6 +182,9 @@ h1 {
                     .attr("fill", function(d) {
                                 return d.colour});
                 
+            var div = d3.select("body").append("div")
+                    .attr("class", "tooltip")
+                    .style("opacity", 0);
                 
             var labels = svg.selectAll(".label")
                     .data(datapoints)
@@ -246,27 +195,18 @@ h1 {
                     .attr("font-size", "20px")
                     .text(function(d) {
                     return d.entity;})
-                    .on("mouseover", function(){
-                        d3.select(this)
-                        .attr("fill","black")})
-                    .on("mouseout", function(){
-                         d3.select(this)
-                         .attr("fill","hsla(0, 9%, 98%, 0)")})
-                    .on("click", function(){
-                            var x = document.getElementById("snackbar")
-                            x.className = "show";
-                            setTimeout(function() {x.className = x.className.replace("show", "")}, 3000)
-                            })
+                    .on("mouseover", function(d) {
+                        div.transition()
+                        .duration(200)
+                        .style("opacity", .9);
+                        div.html(d.years + "<br/>" + d.records)
+                    .style("left", "80%")
+                   .on("mouseout", function(d) {
+                        div.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+                         });
 
-          function myFunction(){
-                            var x = document.getElementById("snackbar")
-                                .data(datapoints)
-                                .enter().append("text")
-                                .attr("class", "label")
-                                .attr("text-anchor","middle")
-                                .attr("fill", "white")
-                                .attr("font-size", "20px")
-                                .text(function(d) {return d.years;})}
                                     
                 simulation.nodes(datapoints)
                 .on('tick', ticked)
