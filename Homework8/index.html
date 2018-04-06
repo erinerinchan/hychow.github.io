@@ -192,7 +192,7 @@
         }
         
         svg {
-            background: lightblue;
+            background: #ffffff;
         }
         
         #container {
@@ -302,7 +302,10 @@
                         var radiusScale = d3.scaleSqrt().domain([1, 1370000]).range([15, 100])
                         
                         var simulation = d3.forceSimulation()
-                            .force("x", d3.forceX(width / 2).strength(0.05))
+                            .force("x", d3.forceX(function(d){
+                                                if(d.years < 2010){
+                                                    return 200} else { return 800}
+                                                }).strength(0.065))
                             .force("y", d3.forceY(height / 2).strength(0.05))
                             .force("collide", d3.forceCollide(function(d) {
                                 return radiusScale(d.records);
