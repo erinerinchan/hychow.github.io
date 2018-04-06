@@ -299,7 +299,7 @@
                         var radiusScale = d3.scaleSqrt().domain([1, 1370000]).range([15, 100])
                         
                         var forceX = d3.forceX(function(d){
-                            if(d.years === '2017'){
+                            if(d.years < 2010){
                                 return 200} else { return 800}
                         }).strength(0.05)
                         var simulation = d3.forceSimulation()
