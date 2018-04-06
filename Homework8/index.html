@@ -31,7 +31,6 @@
             display: inline-block;
             background-color: #e4bf80;
         }
-
         .dot3 {
             height: 25px;
             width: 25px;
@@ -39,7 +38,6 @@
             display: inline-block;
             background-color: #e2975d;
         }
-
         .dot4 {
             height: 25px;
             width: 25px;
@@ -47,7 +45,6 @@
             display: inline-block;
             background-color: #f19670;
         }
-
         .dot5 {
             height: 25px;
             width: 25px;
@@ -55,7 +52,6 @@
             display: inline-block;
             background-color: #e16552;
         }
-
         .dot6 {
             height: 25px;
             width: 25px;
@@ -63,7 +59,6 @@
             display: inline-block;
             background-color: #c94a53;
         }
-
         .dot7 {
             height: 25px;
             width: 25px;
@@ -295,34 +290,28 @@
                 <script>
                     (function() {
                         var width = 1000,
-                            height = 3000;
-
+                            height = 1000;
                         var svg = d3.select("#chart")
                             .append("svg")
                             .attr("height", height)
                             .attr("width", width)
                             .append("g")
                             .attr("transform", "translate(0,0)")
-
                         var radiusScale = d3.scaleSqrt().domain([1, 1370000]).range([15, 100])
                         
                         var forceX = d3.forceX(function(d){
                             if(d.years === '2017'){
-                                return 200} 
-                            else{ return 800}
+                                return 200} else { return 800}
                         }).strength(0.05)
-                        
                         var simulation = d3.forceSimulation()
                             .force("x", forceX)
                             .force("y", d3.forceY(height / 2).strength(0.05))
                             .force("collide", d3.forceCollide(function(d) {
                                 return radiusScale(d.records);
                             }))
-
                         d3.queue()
                             .defer(d3.csv, "data1.csv")
                             .await(ready)
-
                         function ready(error, datapoints) {
                             var circles = svg.selectAll(".entity")
                                 .data(datapoints)
@@ -334,12 +323,10 @@
                                 .attr("fill", function(d) {
                                     return d.colour
                                 });
-
                             var div = d3.select("body").append("div")
                                 .attr("class", "tooltip")
                                 .style("opacity", 0);
                                 
-
                             var labels = svg.selectAll(".label")
                                 .data(datapoints)
                                 .enter().append("text")
@@ -368,12 +355,8 @@
                                         .style("left", (d3.event.pageX) + "px")
                                         .style("top", (d3.event.pageY - 35) + "px")
                                 })
-
-
-
                             simulation.nodes(datapoints)
                                 .on('tick', ticked)
-
                             function ticked() {
                                 circles
                                     .attr("cx", function(d) {
@@ -390,7 +373,6 @@
                                         return d.y
                                     })
                             }
-
                         }
                     })();
                 </script>
