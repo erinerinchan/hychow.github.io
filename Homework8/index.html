@@ -172,7 +172,7 @@ h1 {
                     .attr("fill", "hsla(0, 9%, 98%, 0)")
                     .attr("font-size", "20px")
                     .text(function(d) {
-                    return d.entity + d.records + d.details;})
+                    return d.entity + "<p>"+ d.records + "</p>" + "<p>"+ d.details +"</p>";})
                     .on("mouseover", function(){
                         d3.select(this)
                         .attr("fill","black")})
