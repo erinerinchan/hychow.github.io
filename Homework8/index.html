@@ -92,6 +92,74 @@ h1 {
         background-repeat: repeat;
         }
         
+     #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: #333;
+        color: #fff;
+        opacity: 0.8;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 30px;
+        font-size: 17px;
+        font-family: 'Quicksand';
+    }
+    
+    #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+    
+    @-webkit-keyframes fadein {
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+        to {
+            bottom: 30px;
+            opacity: 0.8;
+        }
+    }
+    
+    @keyframes fadein {
+        from {
+            bottom: 0;
+            opacity: 0;
+        }
+        to {
+            bottom: 30px;
+            opacity: 0.8;
+        }
+    }
+    
+    @-webkit-keyframes fadeout {
+        from {
+            bottom: 30px;
+            opacity: 0.8;
+        }
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
+    }
+    
+    @keyframes fadeout {
+        from {
+            bottom: 30px;
+            opacity: 0.8;
+        }
+        to {
+            bottom: 0;
+            opacity: 0;
+        }
+    }
+
     </style>
 
 </head>
@@ -127,6 +195,7 @@ h1 {
             <h3>| World's Biggest Data Breach (in thousand)</h3>
     <br>
     <div id="chart"></div>
+    <div id="snackbar">Click my face...</div>
 
     <script>
         (function() {
@@ -172,14 +241,21 @@ h1 {
                     .attr("fill", "hsla(0, 9%, 98%, 0)")
                     .attr("font-size", "20px")
                     .text(function(d) {
-                    return d.entity + "<p>"+ d.records + "</p>" + "<p>"+ d.details +"</p>";})
+                    return d.entity;})
                     .on("mouseover", function(){
                         d3.select(this)
                         .attr("fill","black")})
                     .on("mouseout", function(){
                          d3.select(this)
                          .attr("fill","hsla(0, 9%, 98%, 0)")})
-            
+                    .on("click", function(){
+                            var x = document.getElementById("snackbar")
+                            x.className = "show";
+                            setTimeout(function() {
+                                x.className = x.className.replace("show", "");
+                            }, 3000);
+                        }
+                                    
                 simulation.nodes(datapoints)
                 .on('tick', ticked)
                 
