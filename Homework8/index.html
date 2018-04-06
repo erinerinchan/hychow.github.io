@@ -300,7 +300,7 @@
                         
                         var forceX = d3.forceX(function(d){
                             if(d.years < 2010){
-                                return 200} else { return 800}
+                                return 200} else { return 900}
                         }).strength(0.05)
                         var simulation = d3.forceSimulation()
                             .force("x", forceX)
