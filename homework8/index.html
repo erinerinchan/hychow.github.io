@@ -1,0 +1,457 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>World's Biggest Data Breaches</title>
+    <style>
+        .dot1 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #e4bf80;
+        }
+        
+        .dot2 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #e4bf80;
+        }
+        
+        .dot3 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #e2975d;
+        }
+        
+        .dot4 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #f19670;
+        }
+        
+        .dot5 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #e16552;
+        }
+        
+        .dot6 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #c94a53;
+        }
+        
+        .dot7 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #be5168;
+        }
+        
+        .dot8 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #a34974;
+        }
+        
+        .dot9 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #993767;
+        }
+        
+        .dot10 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #65387d;
+        }
+        
+        .dot11 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #4e2472;
+        }
+        
+        .dot12 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #9163b6;
+        }
+        
+        .dot13 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #7c9fb0;
+        }
+        
+        .dot14 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #e279a3;
+        }
+        
+        .dot15 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #e0598b;
+        }
+        
+        * {
+            font-size: 20px;
+            font-family: "Quicksand";
+        }
+        
+        p,
+        text {
+            font-size: 20px;
+        }
+        
+        h1 {
+            font-family: 'Quicksand';
+            font-size: 40px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 600;
+            line-height: 50px;
+            color: white;
+        }
+        
+        h3 {
+            font-family: 'Quicksand';
+            font-size: 30px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 200;
+            line-height: 15.4px;
+            color: rgba(54, 54, 54, 0.863);
+        }
+        
+        h4 {
+            font-family: 'Quicksand';
+            font-size: 25px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 500;
+            line-height: 26.4px;
+            color: white;
+        }
+        
+        p {
+            font-family: 'Quicksand';
+            font-size: 18px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 200;
+            line-height: 20px;
+            color: dimgrey;
+        }
+        
+        g {
+            font-family: 'Quicksand';
+            font-size: 18px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 200;
+            line-height: 20px;
+            color: white;
+        }
+        
+        h5 {
+            font-family: 'Quicksand';
+            font-size: 10px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 200;
+            line-height: 15px;
+        }
+        
+        svg {
+            background: #ffffff;
+        }
+        
+        #container {
+            padding: 50px
+        }
+        
+        #header {
+            background-color: #C48484;
+            padding: 20px;
+        }
+        
+        body {
+            background-color: hsla(0, 9%, 98%, 0);
+            background-repeat: repeat;
+        }
+        
+        div.tooltip {
+            position: absolute;
+            text-align: left;
+            width: 400px;
+            height: 300px;
+            padding: 16px;
+            font: 15px "Quicksand";
+            background: lightsteelblue;
+            border: 0px;
+            border-radius: 2px;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="header">
+        <center>
+            <div class='row'>
+                <div class='col-md-5'>
+                    <p>&nbsp;</p>
+                    <h1 class="animated fadeInUp">// World's Biggest </br> Data Breach // </h1>
+                    <p>&nbsp;</p>
+                </div>
+                <div class='col-md-7'>
+                    <p>&nbsp;</p>
+                    <h4 class="animated fadeInUp" align='left'>| Selected losses greater than 30,000 records</h4>
+                    <h4 class="animated fadeInUp" align='left'>(updated 3rd Apr 2018)</h4>
+                    <br>
+                    <g class="animated fadeInUp">Facebook's data breach scandal, involving 50 million users, shakes the world.
+                    </g>
+                    <g class="animated fadeInUp">But is data breach an unprecedented news to us? Let's take a look.</g>
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+        </center>
+    </div>
+    <div id="container">
+        <br>
+        <h3>| World's Biggest Data Breach</h3>
+        <br>
+        <div class='row'>
+            <div class='col-md-6'>
+                <center>
+                    <p>
+                        <span class="dot1"></span> Academic
+                        <span class="dot2"></span> App
+                        <span class="dot3"></span> Energy
+                        <span class="dot4"></span> Financial
+                        <span class="dot5"></span> Gaming
+                        <br>
+                        <span class="dot6"></span> Government
+                        <span class="dot7"></span> Healthcare
+                        <span class="dot8"></span> Legal
+                        <span class="dot9"></span> Media
+                        <span class="dot10"></span> Military
+                        <br>
+                        <span class="dot11"></span> Retail
+                        <span class="dot12"></span> Tech
+                        <span class="dot13"></span> Telecoms
+                        <span class="dot14"></span> Transport
+                        <span class="dot15"></span> Web
+                    </p>
+                </center>
+            </div>
+            <div class='col-md-6'>
+                <p>| Hover around the bubble to get the name of the entity invovled.</p>
+                <p>| Click the name to see more details of the incident.</p>
+                <p>| "Decade Split" can push pre and post-2010 to R and L respectively.</p>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-12'>
+                <br>
+                <button id="decade"> Decade split </button>
+                <button id="combine"> Combine </button>
+                <div id="chart"></div>
+                <script>
+                    (function() {
+                        var width = 1200,
+                            height = 1000;
+                        var svg = d3.select("#chart")
+                            .append("svg")
+                            .attr("height", height)
+                            .attr("width", width)
+                            .append("g")
+                            .attr("transform", "translate(0,0)")
+                        var radiusScale = d3.scaleSqrt().domain([1, 1370000]).range([15, 100])
+
+                        var simulation = d3.forceSimulation()
+                            .force("x", d3.forceX(function(d) {
+                                if (d.years < 2010) {
+                                    return 200
+                                } else {
+                                    return 800
+                                }
+                            }).strength(0.065))
+                            .force("y", d3.forceY(height / 2).strength(0.05))
+                            .force("collide", d3.forceCollide(function(d) {
+                                return radiusScale(d.records);
+                            }))
+
+                        d3.queue()
+                            .defer(d3.csv, "data2.csv")
+                            .await(ready)
+
+                        function ready(error, datapoints) {
+                            var circles = svg.selectAll(".entity")
+                                .data(datapoints)
+                                .enter().append("circle")
+                                .attr("class", "entity")
+                                .attr("r", function(d) {
+                                    return radiusScale(d.records)
+                                })
+                                .attr("fill", function(d) {
+                                    return d.colour
+                                });
+                            var div = d3.select("body").append("div")
+                                .attr("class", "tooltip")
+                                .style("opacity", 0);
+
+                            var labels = svg.selectAll(".label")
+                                .data(datapoints)
+                                .enter().append("text")
+                                .attr("class", "label")
+                                .attr("text-anchor", "middle")
+                                .attr("fill", "hsla(0, 9%, 98%, 0)")
+                                .attr("font-size", "20px")
+                                .text(function(d) {
+                                    return d.entity;
+                                })
+                                .on("mouseover", function() {
+                                    d3.select(this)
+                                        .attr("fill", "black")
+                                })
+                                .on("mouseout", function() {
+                                    d3.select(this)
+                                        .attr("fill", "hsla(0, 9%, 98%, 0)")
+                                })
+                                .on("click", function(d) {
+                                    div.transition()
+                                        .duration(200)
+                                        .style("opacity", .9)
+                                    div.html(
+                                            "| " + "Entity" + ": " + d.entity + "<br/>" +
+                                            "| " + "Year" + ": " + d.years + "<br/>" +
+                                            "| " + "Records Stolen" + ": " + d.records + "k" + "</br>" +
+                                            "| " + "Details" + ": " + "</br>" + d.details)
+                                        .style("left", "50px")
+                                        .style("top", "1290px")
+                                })
+
+
+                            d3.select("#decade").on("click", function() {
+                                simulation
+                                    .force("x", d3.forceX(function(d) {
+                                        if (d.years < 2010) {
+                                            return 200
+                                        } else {
+                                            return 800
+                                        }
+                                    }).strength(0.045))
+                                    .alphaTarget(0.045)
+                                    .restart()
+                            })
+                            d3.select("#combine").on("click", function() {
+                                simulation
+                                    .force("x", d3.forceX(width / 2).strength(0.045))
+                                    .alphaTarget(0.045)
+                                    .restart()
+                            })
+
+                            simulation.nodes(datapoints)
+                                .on('tick', ticked)
+
+                            function ticked() {
+                                circles
+                                    .attr("cx", function(d) {
+                                        return d.x
+                                    })
+                                    .attr("cy", function(d) {
+                                        return d.y
+                                    })
+                                labels
+                                    .attr("x", function(d) {
+                                        return d.x
+                                    })
+                                    .attr("y", function(d) {
+                                        return d.y
+                                    })
+                            }
+                        }
+                    })();
+                </script>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3> | What's special?</h3>
+                <br>
+                <p> | Which type of organisation always face data breach?</p>
+                <p> Web company. From 2004 til now, there are 77 incidents related to them.</p>
+                <p>Then, the government and the financial sector come as second and third.</p>
+                <br>
+                <p> | Which type of organisation is less prone to data breach?</p>
+                <p> Law firm. From 2004 til now, there is only one incidents related to them. 2.6TB of data on politicians, criminals, professional athletes etc leaked from law firm Mossack Fonseca, including emails, contracts, scanned documents, transcripts...in
+                    2016.
+                </p>
+                <p> Organsations related to energy and media also only have three reported incidents in 11 years respectively.</p>
+                <br>
+                <p> | What's the biggest data breach of all time?</p>
+                <p> Nope it is not Facebook's data breach.</p>
+                <p> It is the one caused by River City Media in 2017. 1370000k records of personal information like email addresses were leaked. Their own business plans and operations were exposed as well.
+                    <p> The second biggest breach in history happed in India. Billions of Aaahaar, which is a 12 unit indentity number issued to each indivial, can be purchased through online.</p>
+                    <p> Spambot, which is , again, related to the web,leaked 711000k records. Luckily, most of them are believed to be fake or repeated account.</p>
+                    <br>
+                    <p> | Is data breach getting more common and serious?</p>
+                    <p> Absolutely.</p>
+                    <p> Data breaches happened in post-2010 are way more than pre-2010. The number of stolen records also booms.</p>
+                    <p> In pre-2010, data breach usually happened in financial sector. Yet, when it is after 2010, most of the leaks were related to different webistes.</p>
+                    <p> This may be the result of the advancement of technology. Databases of online websites are more valuble because of the increase in number of internet users and willingness to provdie different types of perosonal information online.
+                        At the meantime, the skills of the hackers are more mature and the consequences for technological error also become more serious. But another reason may be the lack of documentation about data breach before 2010.</p>
+                    <h5>Data are retrieved from http://www.informationisbeautiful.net/.</h5>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
