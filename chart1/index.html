@@ -260,6 +260,8 @@
                   return "translate(" + label.centroid(d) + ")";
               })
               .attr("dy", "0.35em")
+              .attr("font-family","Quicksand")
+              .attr("fill","white")
               .text(function(d) {
                   return d.data[value];
               });
