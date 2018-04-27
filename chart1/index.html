@@ -259,7 +259,7 @@
               .attr("transform", function(d) {
                   return "translate(" + label.centroid(d) + ")";
               })
-              .attr("dy", "0.35em")
+              .attr("dy", "1em")
               .attr("font-family","Quicksand")
               .attr("fill","white")
               .text(function(d) {
@@ -270,6 +270,13 @@
               .attr("dx", 30)
               .attr("dy", -5)
               .attr("font-family","Quicksand")
+              .append("textPath")
+              .attr("xlink:href", function(d, i) {
+                  return "#arc-" + i;
+              })
+              .text(function(d) {
+                  return d.data[caption].toString();
+              })
       }
 
       var helpers = {
