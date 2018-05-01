@@ -149,8 +149,7 @@
         var path = d3.arc()
             .outerRadius(radius - 20)
             .innerRadius(0)
-            .cornerRadius(5)
-            .attr("font-size","20px");
+            .cornerRadius(5);
         var label = d3.arc()
             .outerRadius(radius - 40)
             .innerRadius(radius - 40);
@@ -268,6 +267,7 @@
             .attr("dx", 30)
             .attr("dy", -5)
             .attr("font-family", "Optima")
+            .attr("font-size","20px")
             .append("textPath")
             .attr("xlink:href", function(d, i) {
                 return "#arc-" + i;
