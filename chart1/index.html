@@ -64,6 +64,37 @@
             font-weight: 200;
             line-height: 15px;
         }
+        .dot1 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #FF1206;
+        }
+        
+        .dot2 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #FF5B52;
+        }
+        
+        .dot3 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #7F2D29;
+        }
+        
+        .dot4 {
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #7F0903;
+        }
     </style>
 
 </head>
@@ -72,7 +103,13 @@
     <br>
     <h3>Shark Spieces Sold in HK</h3>
     <p>Data drawn from 4,800 samples</p>
-    <div id="chart5" style="width: 850;height: 520">
+    <p>
+                        <span class="dot1"></span> Threatened
+                        <span class="dot2"></span> Near Threatened
+                        <span class="dot3"></span> Little Concern
+                        <span class="dot4"></span> Data Deficient
+    </p>
+    <div id="chart5" style="width: 500;height: 520">
     </div>
 </body>
 <script>
@@ -150,9 +187,11 @@
             .outerRadius(radius - 20)
             .innerRadius(0)
             .cornerRadius(5);
+        /*
         var label = d3.arc()
             .outerRadius(radius - 40)
             .innerRadius(radius - 40);
+        */
 
         var arc = g.selectAll(".arc")
             .data(pie(data))
