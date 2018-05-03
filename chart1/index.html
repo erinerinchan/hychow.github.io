@@ -238,6 +238,7 @@
             var dims = helpers.getDimensions("tooltipText_" + mainDivName);
             d3.selectAll("#tooltipText_" + mainDivName + " tspan")
                 .attr("x", dims.w + 2);
+            
             d3.selectAll("#tooltipRect_" + mainDivName)
                 .attr("width", dims.w + 10)
                 .attr("height", dims.h + 20);
@@ -273,6 +274,7 @@
             .attr("id", "tooltip_" + mainDivName)
             .attr("style", "opacity:0")
             .attr("transform", "translate(-500,-500)");
+        /*
         tooltipg.append("rect")
             .attr("id", "tooltipRect_" + mainDivName)
             .attr("x", 0)
@@ -280,6 +282,7 @@
             .attr("height", 80)
             .attr("opacity", 0.8)
             .style("fill", "#000000");
+        */
         tooltipg
             .append("text")
             .attr("id", "tooltipText_" + mainDivName)
@@ -314,6 +317,7 @@
                 return d.data[caption].toString();
             })
     }
+    /*
     var helpers = {
             getDimensions: function(id) {
                 var el = document.getElementById(id);
@@ -332,6 +336,7 @@
                 };
             }
         }
+     */
         /*MIT License
         Copyright (c) [2017] [Chandrakant Thakkar]
         Permission is hereby granted, free of charge, to any person obtaining a copy
